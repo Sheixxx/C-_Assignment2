@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hospital" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZENSHEIX\SQLEXPRESS;Initial Catalog=Hospital;Integrated Security=True" SettingsObjectName="Assignment2.Properties.Settings" SettingsPropertyName="HospitalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Appointments" Member="Appointments">
+    <Type Name="Appointments">
+      <Column Name="AppointmentCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AppointmentTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patient_Appointments" Member="Patient" ThisKey="PatientId" OtherKey="PatientId" Type="Patient" IsForeignKey="true" />
+      <Association Name="Doctor_Appointments" Member="Doctor" ThisKey="DoctorId" OtherKey="DoctorId" Type="Doctor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patient" Member="Patient">
+    <Type Name="Patient">
+      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="PatientAddress" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PatientGender" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Patient_Appointments" Member="Appointments" ThisKey="PatientId" OtherKey="PatientId" Type="Appointments" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doctor" Member="Doctor">
+    <Type Name="Doctor">
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DoctorName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DoctorTel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HiringDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DoctorSpecialism" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Doctor_Appointments" Member="Appointments" ThisKey="DoctorId" OtherKey="DoctorId" Type="Appointments" />
+    </Type>
+  </Table>
+</Database>

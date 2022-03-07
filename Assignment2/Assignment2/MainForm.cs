@@ -38,5 +38,11 @@ namespace Assignment2
             DoctorManagementForm formDoctor = new DoctorManagementForm();
             formDoctor.Show();
         }
+
+        private void apointmentManagmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AppointmentManagement formAppointment = new AppointmentManagement();
+            formAppointment.Show();
+        }
     }
 }

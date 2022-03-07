@@ -51,7 +51,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(711, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,28 +62,29 @@
             this.patientManagementToolStripMenuItem,
             this.apointmentManagmentToolStripMenuItem});
             this.managementSystemToolStripMenuItem.Name = "managementSystemToolStripMenuItem";
-            this.managementSystemToolStripMenuItem.Size = new System.Drawing.Size(195, 29);
+            this.managementSystemToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.managementSystemToolStripMenuItem.Text = "Management System";
             // 
             // doctorManagementToolStripMenuItem
             // 
             this.doctorManagementToolStripMenuItem.Name = "doctorManagementToolStripMenuItem";
-            this.doctorManagementToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+            this.doctorManagementToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.doctorManagementToolStripMenuItem.Text = "Doctor Management";
             this.doctorManagementToolStripMenuItem.Click += new System.EventHandler(this.doctorManagementToolStripMenuItem_Click);
             // 
             // patientManagementToolStripMenuItem
             // 
             this.patientManagementToolStripMenuItem.Name = "patientManagementToolStripMenuItem";
-            this.patientManagementToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+            this.patientManagementToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.patientManagementToolStripMenuItem.Text = "Patient Management";
             this.patientManagementToolStripMenuItem.Click += new System.EventHandler(this.patientManagementToolStripMenuItem_Click);
             // 
             // apointmentManagmentToolStripMenuItem
             // 
             this.apointmentManagmentToolStripMenuItem.Name = "apointmentManagmentToolStripMenuItem";
-            this.apointmentManagmentToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+            this.apointmentManagmentToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.apointmentManagmentToolStripMenuItem.Text = "Apointment Managment";
+            this.apointmentManagmentToolStripMenuItem.Click += new System.EventHandler(this.apointmentManagmentToolStripMenuItem_Click);
             // 
             // consultationToolStripMenuItem
             // 
@@ -92,39 +93,39 @@
             this.searchAppointmentByDateToolStripMenuItem,
             this.showAPatientsAppointmentsToolStripMenuItem});
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
-            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(128, 29);
+            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.consultationToolStripMenuItem.Text = "Consultation";
             // 
             // showAllPart1ToolStripMenuItem
             // 
             this.showAllPart1ToolStripMenuItem.Name = "showAllPart1ToolStripMenuItem";
-            this.showAllPart1ToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
+            this.showAllPart1ToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.showAllPart1ToolStripMenuItem.Text = "Show All";
             // 
             // searchAppointmentByDateToolStripMenuItem
             // 
             this.searchAppointmentByDateToolStripMenuItem.Name = "searchAppointmentByDateToolStripMenuItem";
-            this.searchAppointmentByDateToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
+            this.searchAppointmentByDateToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.searchAppointmentByDateToolStripMenuItem.Text = "Search appointment by date";
             // 
             // showAPatientsAppointmentsToolStripMenuItem
             // 
             this.showAPatientsAppointmentsToolStripMenuItem.Name = "showAPatientsAppointmentsToolStripMenuItem";
-            this.showAPatientsAppointmentsToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
+            this.showAPatientsAppointmentsToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.showAPatientsAppointmentsToolStripMenuItem.Text = "Show a patient\'s appointments";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

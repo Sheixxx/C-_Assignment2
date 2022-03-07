@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBoxAppointmentManagement = new System.Windows.Forms.GroupBox();
-            this.groupBoxPatient = new System.Windows.Forms.GroupBox();
-            this.groupBoxAppointment = new System.Windows.Forms.GroupBox();
-            this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.labelPatientCode = new System.Windows.Forms.Label();
-            this.labelPatientName = new System.Windows.Forms.Label();
-            this.labelPatientGender = new System.Windows.Forms.Label();
-            this.textBoxPatientName = new System.Windows.Forms.TextBox();
-            this.comboBoxPatientCode = new System.Windows.Forms.ComboBox();
-            this.labelAppointmentDate = new System.Windows.Forms.Label();
-            this.labelAppointmentTime = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.buttonAddAppointment = new System.Windows.Forms.Button();
-            this.buttonNew = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.labelDoctorCode = new System.Windows.Forms.Label();
-            this.labelDoctorName = new System.Windows.Forms.Label();
-            this.labelDoctorSpeciality = new System.Windows.Forms.Label();
-            this.textBoxDoctorName = new System.Windows.Forms.TextBox();
-            this.textBoxDoctorSpeciality = new System.Windows.Forms.TextBox();
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonAddAppointment = new System.Windows.Forms.Button();
+            this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
             this.comboBoxDoctorCode = new System.Windows.Forms.ComboBox();
+            this.textBoxDoctorSpeciality = new System.Windows.Forms.TextBox();
+            this.textBoxDoctorName = new System.Windows.Forms.TextBox();
+            this.labelDoctorSpeciality = new System.Windows.Forms.Label();
+            this.labelDoctorName = new System.Windows.Forms.Label();
+            this.labelDoctorCode = new System.Windows.Forms.Label();
+            this.groupBoxAppointment = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxAppointmentTime = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelAppointmentTime = new System.Windows.Forms.Label();
+            this.labelAppointmentDate = new System.Windows.Forms.Label();
+            this.groupBoxPatient = new System.Windows.Forms.GroupBox();
+            this.comboBoxPatientCode = new System.Windows.Forms.ComboBox();
+            this.textBoxPatientName = new System.Windows.Forms.TextBox();
+            this.labelPatientGender = new System.Windows.Forms.Label();
+            this.labelPatientName = new System.Windows.Forms.Label();
+            this.labelPatientCode = new System.Windows.Forms.Label();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.groupBoxAppointmentManagement.SuspendLayout();
-            this.groupBoxPatient.SuspendLayout();
-            this.groupBoxAppointment.SuspendLayout();
             this.groupBoxDoctor.SuspendLayout();
+            this.groupBoxAppointment.SuspendLayout();
+            this.groupBoxPatient.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxAppointmentManagement
@@ -73,34 +73,35 @@
             this.groupBoxAppointmentManagement.TabStop = false;
             this.groupBoxAppointmentManagement.Text = "Appointment Management";
             // 
-            // groupBoxPatient
+            // buttonExit
             // 
-            this.groupBoxPatient.Controls.Add(this.comboBoxPatientCode);
-            this.groupBoxPatient.Controls.Add(this.textBoxPatientName);
-            this.groupBoxPatient.Controls.Add(this.labelPatientGender);
-            this.groupBoxPatient.Controls.Add(this.labelPatientName);
-            this.groupBoxPatient.Controls.Add(this.labelPatientCode);
-            this.groupBoxPatient.Controls.Add(this.radioButtonMale);
-            this.groupBoxPatient.Controls.Add(this.radioButtonFemale);
-            this.groupBoxPatient.Location = new System.Drawing.Point(3, 18);
-            this.groupBoxPatient.Name = "groupBoxPatient";
-            this.groupBoxPatient.Size = new System.Drawing.Size(365, 214);
-            this.groupBoxPatient.TabIndex = 0;
-            this.groupBoxPatient.TabStop = false;
-            this.groupBoxPatient.Text = "groupBoxPatient";
+            this.buttonExit.Location = new System.Drawing.Point(575, 385);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(175, 23);
+            this.buttonExit.TabIndex = 7;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // groupBoxAppointment
+            // buttonNew
             // 
-            this.groupBoxAppointment.Controls.Add(this.maskedTextBoxAppointmentTime);
-            this.groupBoxAppointment.Controls.Add(this.dateTimePicker1);
-            this.groupBoxAppointment.Controls.Add(this.labelAppointmentTime);
-            this.groupBoxAppointment.Controls.Add(this.labelAppointmentDate);
-            this.groupBoxAppointment.Location = new System.Drawing.Point(12, 283);
-            this.groupBoxAppointment.Name = "groupBoxAppointment";
-            this.groupBoxAppointment.Size = new System.Drawing.Size(356, 135);
-            this.groupBoxAppointment.TabIndex = 1;
-            this.groupBoxAppointment.TabStop = false;
-            this.groupBoxAppointment.Text = "groupBoxAppointment";
+            this.buttonNew.Location = new System.Drawing.Point(575, 356);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(175, 23);
+            this.buttonNew.TabIndex = 6;
+            this.buttonNew.Text = "New";
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
+            // buttonAddAppointment
+            // 
+            this.buttonAddAppointment.Location = new System.Drawing.Point(575, 327);
+            this.buttonAddAppointment.Name = "buttonAddAppointment";
+            this.buttonAddAppointment.Size = new System.Drawing.Size(175, 23);
+            this.buttonAddAppointment.TabIndex = 5;
+            this.buttonAddAppointment.Text = "Add Appointment";
+            this.buttonAddAppointment.UseVisualStyleBackColor = true;
+            this.buttonAddAppointment.Click += new System.EventHandler(this.buttonAddAppointment_Click);
             // 
             // groupBoxDoctor
             // 
@@ -117,16 +118,165 @@
             this.groupBoxDoctor.TabStop = false;
             this.groupBoxDoctor.Text = "groupBoxDoctor";
             // 
-            // radioButtonFemale
+            // comboBoxDoctorCode
             // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(153, 131);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(36, 20);
-            this.radioButtonFemale.TabIndex = 3;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "F";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            this.comboBoxDoctorCode.FormattingEnabled = true;
+            this.comboBoxDoctorCode.Location = new System.Drawing.Point(166, 32);
+            this.comboBoxDoctorCode.Name = "comboBoxDoctorCode";
+            this.comboBoxDoctorCode.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxDoctorCode.TabIndex = 10;
+            this.comboBoxDoctorCode.SelectedIndexChanged += new System.EventHandler(this.comboBoxDoctorCode_SelectedIndexChanged);
+            // 
+            // textBoxDoctorSpeciality
+            // 
+            this.textBoxDoctorSpeciality.Location = new System.Drawing.Point(187, 126);
+            this.textBoxDoctorSpeciality.Name = "textBoxDoctorSpeciality";
+            this.textBoxDoctorSpeciality.ReadOnly = true;
+            this.textBoxDoctorSpeciality.Size = new System.Drawing.Size(100, 22);
+            this.textBoxDoctorSpeciality.TabIndex = 9;
+            // 
+            // textBoxDoctorName
+            // 
+            this.textBoxDoctorName.Location = new System.Drawing.Point(187, 77);
+            this.textBoxDoctorName.Name = "textBoxDoctorName";
+            this.textBoxDoctorName.ReadOnly = true;
+            this.textBoxDoctorName.Size = new System.Drawing.Size(100, 22);
+            this.textBoxDoctorName.TabIndex = 8;
+            // 
+            // labelDoctorSpeciality
+            // 
+            this.labelDoctorSpeciality.AutoSize = true;
+            this.labelDoctorSpeciality.Location = new System.Drawing.Point(43, 130);
+            this.labelDoctorSpeciality.Name = "labelDoctorSpeciality";
+            this.labelDoctorSpeciality.Size = new System.Drawing.Size(109, 16);
+            this.labelDoctorSpeciality.TabIndex = 2;
+            this.labelDoctorSpeciality.Text = "Doctor Speciality";
+            // 
+            // labelDoctorName
+            // 
+            this.labelDoctorName.AutoSize = true;
+            this.labelDoctorName.Location = new System.Drawing.Point(43, 83);
+            this.labelDoctorName.Name = "labelDoctorName";
+            this.labelDoctorName.Size = new System.Drawing.Size(87, 16);
+            this.labelDoctorName.TabIndex = 1;
+            this.labelDoctorName.Text = "Doctor Name";
+            // 
+            // labelDoctorCode
+            // 
+            this.labelDoctorCode.AutoSize = true;
+            this.labelDoctorCode.Location = new System.Drawing.Point(43, 40);
+            this.labelDoctorCode.Name = "labelDoctorCode";
+            this.labelDoctorCode.Size = new System.Drawing.Size(83, 16);
+            this.labelDoctorCode.TabIndex = 0;
+            this.labelDoctorCode.Text = "Doctor Code";
+            // 
+            // groupBoxAppointment
+            // 
+            this.groupBoxAppointment.Controls.Add(this.maskedTextBoxAppointmentTime);
+            this.groupBoxAppointment.Controls.Add(this.dateTimePicker1);
+            this.groupBoxAppointment.Controls.Add(this.labelAppointmentTime);
+            this.groupBoxAppointment.Controls.Add(this.labelAppointmentDate);
+            this.groupBoxAppointment.Location = new System.Drawing.Point(12, 283);
+            this.groupBoxAppointment.Name = "groupBoxAppointment";
+            this.groupBoxAppointment.Size = new System.Drawing.Size(356, 135);
+            this.groupBoxAppointment.TabIndex = 1;
+            this.groupBoxAppointment.TabStop = false;
+            this.groupBoxAppointment.Text = "groupBoxAppointment";
+            // 
+            // maskedTextBoxAppointmentTime
+            // 
+            this.maskedTextBoxAppointmentTime.Location = new System.Drawing.Point(144, 83);
+            this.maskedTextBoxAppointmentTime.Name = "maskedTextBoxAppointmentTime";
+            this.maskedTextBoxAppointmentTime.Size = new System.Drawing.Size(200, 22);
+            this.maskedTextBoxAppointmentTime.TabIndex = 8;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(144, 39);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // labelAppointmentTime
+            // 
+            this.labelAppointmentTime.AutoSize = true;
+            this.labelAppointmentTime.Location = new System.Drawing.Point(19, 89);
+            this.labelAppointmentTime.Name = "labelAppointmentTime";
+            this.labelAppointmentTime.Size = new System.Drawing.Size(116, 16);
+            this.labelAppointmentTime.TabIndex = 4;
+            this.labelAppointmentTime.Text = "Appointment Time";
+            // 
+            // labelAppointmentDate
+            // 
+            this.labelAppointmentDate.AutoSize = true;
+            this.labelAppointmentDate.Location = new System.Drawing.Point(19, 44);
+            this.labelAppointmentDate.Name = "labelAppointmentDate";
+            this.labelAppointmentDate.Size = new System.Drawing.Size(114, 16);
+            this.labelAppointmentDate.TabIndex = 3;
+            this.labelAppointmentDate.Text = "Appointment Date";
+            this.labelAppointmentDate.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // groupBoxPatient
+            // 
+            this.groupBoxPatient.Controls.Add(this.comboBoxPatientCode);
+            this.groupBoxPatient.Controls.Add(this.textBoxPatientName);
+            this.groupBoxPatient.Controls.Add(this.labelPatientGender);
+            this.groupBoxPatient.Controls.Add(this.labelPatientName);
+            this.groupBoxPatient.Controls.Add(this.labelPatientCode);
+            this.groupBoxPatient.Controls.Add(this.radioButtonMale);
+            this.groupBoxPatient.Controls.Add(this.radioButtonFemale);
+            this.groupBoxPatient.Location = new System.Drawing.Point(3, 18);
+            this.groupBoxPatient.Name = "groupBoxPatient";
+            this.groupBoxPatient.Size = new System.Drawing.Size(365, 214);
+            this.groupBoxPatient.TabIndex = 0;
+            this.groupBoxPatient.TabStop = false;
+            this.groupBoxPatient.Text = "groupBoxPatient";
+            // 
+            // comboBoxPatientCode
+            // 
+            this.comboBoxPatientCode.FormattingEnabled = true;
+            this.comboBoxPatientCode.Location = new System.Drawing.Point(153, 43);
+            this.comboBoxPatientCode.Name = "comboBoxPatientCode";
+            this.comboBoxPatientCode.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPatientCode.TabIndex = 11;
+            this.comboBoxPatientCode.SelectedIndexChanged += new System.EventHandler(this.comboBoxPatientCode_SelectedIndexChanged);
+            // 
+            // textBoxPatientName
+            // 
+            this.textBoxPatientName.Location = new System.Drawing.Point(153, 86);
+            this.textBoxPatientName.Name = "textBoxPatientName";
+            this.textBoxPatientName.ReadOnly = true;
+            this.textBoxPatientName.Size = new System.Drawing.Size(121, 22);
+            this.textBoxPatientName.TabIndex = 3;
+            // 
+            // labelPatientGender
+            // 
+            this.labelPatientGender.AutoSize = true;
+            this.labelPatientGender.Location = new System.Drawing.Point(28, 138);
+            this.labelPatientGender.Name = "labelPatientGender";
+            this.labelPatientGender.Size = new System.Drawing.Size(96, 16);
+            this.labelPatientGender.TabIndex = 7;
+            this.labelPatientGender.Text = "Patient Gender";
+            // 
+            // labelPatientName
+            // 
+            this.labelPatientName.AutoSize = true;
+            this.labelPatientName.Location = new System.Drawing.Point(28, 92);
+            this.labelPatientName.Name = "labelPatientName";
+            this.labelPatientName.Size = new System.Drawing.Size(88, 16);
+            this.labelPatientName.TabIndex = 6;
+            this.labelPatientName.Text = "Patient Name";
+            // 
+            // labelPatientCode
+            // 
+            this.labelPatientCode.AutoSize = true;
+            this.labelPatientCode.Location = new System.Drawing.Point(28, 49);
+            this.labelPatientCode.Name = "labelPatientCode";
+            this.labelPatientCode.Size = new System.Drawing.Size(84, 16);
+            this.labelPatientCode.TabIndex = 5;
+            this.labelPatientCode.Text = "Patient Code";
+            this.labelPatientCode.Click += new System.EventHandler(this.label1_Click);
             // 
             // radioButtonMale
             // 
@@ -139,158 +289,16 @@
             this.radioButtonMale.Text = "M";
             this.radioButtonMale.UseVisualStyleBackColor = true;
             // 
-            // labelPatientCode
+            // radioButtonFemale
             // 
-            this.labelPatientCode.AutoSize = true;
-            this.labelPatientCode.Location = new System.Drawing.Point(28, 49);
-            this.labelPatientCode.Name = "labelPatientCode";
-            this.labelPatientCode.Size = new System.Drawing.Size(84, 16);
-            this.labelPatientCode.TabIndex = 5;
-            this.labelPatientCode.Text = "Patient Code";
-            this.labelPatientCode.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // labelPatientName
-            // 
-            this.labelPatientName.AutoSize = true;
-            this.labelPatientName.Location = new System.Drawing.Point(28, 92);
-            this.labelPatientName.Name = "labelPatientName";
-            this.labelPatientName.Size = new System.Drawing.Size(88, 16);
-            this.labelPatientName.TabIndex = 6;
-            this.labelPatientName.Text = "Patient Name";
-            // 
-            // labelPatientGender
-            // 
-            this.labelPatientGender.AutoSize = true;
-            this.labelPatientGender.Location = new System.Drawing.Point(28, 138);
-            this.labelPatientGender.Name = "labelPatientGender";
-            this.labelPatientGender.Size = new System.Drawing.Size(96, 16);
-            this.labelPatientGender.TabIndex = 7;
-            this.labelPatientGender.Text = "Patient Gender";
-            // 
-            // textBoxPatientName
-            // 
-            this.textBoxPatientName.Location = new System.Drawing.Point(153, 86);
-            this.textBoxPatientName.Name = "textBoxPatientName";
-            this.textBoxPatientName.Size = new System.Drawing.Size(121, 22);
-            this.textBoxPatientName.TabIndex = 3;
-            // 
-            // comboBoxPatientCode
-            // 
-            this.comboBoxPatientCode.FormattingEnabled = true;
-            this.comboBoxPatientCode.Location = new System.Drawing.Point(153, 41);
-            this.comboBoxPatientCode.Name = "comboBoxPatientCode";
-            this.comboBoxPatientCode.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxPatientCode.TabIndex = 3;
-            // 
-            // labelAppointmentDate
-            // 
-            this.labelAppointmentDate.AutoSize = true;
-            this.labelAppointmentDate.Location = new System.Drawing.Point(19, 44);
-            this.labelAppointmentDate.Name = "labelAppointmentDate";
-            this.labelAppointmentDate.Size = new System.Drawing.Size(114, 16);
-            this.labelAppointmentDate.TabIndex = 3;
-            this.labelAppointmentDate.Text = "Appointment Date";
-            this.labelAppointmentDate.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // labelAppointmentTime
-            // 
-            this.labelAppointmentTime.AutoSize = true;
-            this.labelAppointmentTime.Location = new System.Drawing.Point(19, 89);
-            this.labelAppointmentTime.Name = "labelAppointmentTime";
-            this.labelAppointmentTime.Size = new System.Drawing.Size(116, 16);
-            this.labelAppointmentTime.TabIndex = 4;
-            this.labelAppointmentTime.Text = "Appointment Time";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // buttonAddAppointment
-            // 
-            this.buttonAddAppointment.Location = new System.Drawing.Point(575, 327);
-            this.buttonAddAppointment.Name = "buttonAddAppointment";
-            this.buttonAddAppointment.Size = new System.Drawing.Size(175, 23);
-            this.buttonAddAppointment.TabIndex = 5;
-            this.buttonAddAppointment.Text = "Add Appointment";
-            this.buttonAddAppointment.UseVisualStyleBackColor = true;
-            // 
-            // buttonNew
-            // 
-            this.buttonNew.Location = new System.Drawing.Point(575, 356);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(175, 23);
-            this.buttonNew.TabIndex = 6;
-            this.buttonNew.Text = "New";
-            this.buttonNew.UseVisualStyleBackColor = true;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(575, 385);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(175, 23);
-            this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            // 
-            // labelDoctorCode
-            // 
-            this.labelDoctorCode.AutoSize = true;
-            this.labelDoctorCode.Location = new System.Drawing.Point(43, 40);
-            this.labelDoctorCode.Name = "labelDoctorCode";
-            this.labelDoctorCode.Size = new System.Drawing.Size(83, 16);
-            this.labelDoctorCode.TabIndex = 0;
-            this.labelDoctorCode.Text = "Doctor Code";
-            // 
-            // labelDoctorName
-            // 
-            this.labelDoctorName.AutoSize = true;
-            this.labelDoctorName.Location = new System.Drawing.Point(43, 83);
-            this.labelDoctorName.Name = "labelDoctorName";
-            this.labelDoctorName.Size = new System.Drawing.Size(87, 16);
-            this.labelDoctorName.TabIndex = 1;
-            this.labelDoctorName.Text = "Doctor Name";
-            // 
-            // labelDoctorSpeciality
-            // 
-            this.labelDoctorSpeciality.AutoSize = true;
-            this.labelDoctorSpeciality.Location = new System.Drawing.Point(43, 130);
-            this.labelDoctorSpeciality.Name = "labelDoctorSpeciality";
-            this.labelDoctorSpeciality.Size = new System.Drawing.Size(109, 16);
-            this.labelDoctorSpeciality.TabIndex = 2;
-            this.labelDoctorSpeciality.Text = "Doctor Speciality";
-            // 
-            // textBoxDoctorName
-            // 
-            this.textBoxDoctorName.Location = new System.Drawing.Point(187, 77);
-            this.textBoxDoctorName.Name = "textBoxDoctorName";
-            this.textBoxDoctorName.Size = new System.Drawing.Size(100, 22);
-            this.textBoxDoctorName.TabIndex = 8;
-            // 
-            // textBoxDoctorSpeciality
-            // 
-            this.textBoxDoctorSpeciality.Location = new System.Drawing.Point(187, 126);
-            this.textBoxDoctorSpeciality.Name = "textBoxDoctorSpeciality";
-            this.textBoxDoctorSpeciality.Size = new System.Drawing.Size(100, 22);
-            this.textBoxDoctorSpeciality.TabIndex = 9;
-            // 
-            // comboBoxDoctorCode
-            // 
-            this.comboBoxDoctorCode.FormattingEnabled = true;
-            this.comboBoxDoctorCode.Location = new System.Drawing.Point(166, 32);
-            this.comboBoxDoctorCode.Name = "comboBoxDoctorCode";
-            this.comboBoxDoctorCode.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxDoctorCode.TabIndex = 10;
-            // 
-            // maskedTextBoxAppointmentTime
-            // 
-            this.maskedTextBoxAppointmentTime.Location = new System.Drawing.Point(144, 83);
-            this.maskedTextBoxAppointmentTime.Name = "maskedTextBoxAppointmentTime";
-            this.maskedTextBoxAppointmentTime.Size = new System.Drawing.Size(200, 22);
-            this.maskedTextBoxAppointmentTime.TabIndex = 8;
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(153, 131);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(36, 20);
+            this.radioButtonFemale.TabIndex = 3;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "F";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // AppointmentManagement
             // 
@@ -301,12 +309,12 @@
             this.Name = "AppointmentManagement";
             this.Text = "Appointment Management";
             this.groupBoxAppointmentManagement.ResumeLayout(false);
-            this.groupBoxPatient.ResumeLayout(false);
-            this.groupBoxPatient.PerformLayout();
-            this.groupBoxAppointment.ResumeLayout(false);
-            this.groupBoxAppointment.PerformLayout();
             this.groupBoxDoctor.ResumeLayout(false);
             this.groupBoxDoctor.PerformLayout();
+            this.groupBoxAppointment.ResumeLayout(false);
+            this.groupBoxAppointment.PerformLayout();
+            this.groupBoxPatient.ResumeLayout(false);
+            this.groupBoxPatient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -322,7 +330,6 @@
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.Label labelPatientGender;
         private System.Windows.Forms.Label labelPatientName;
-        private System.Windows.Forms.ComboBox comboBoxPatientCode;
         private System.Windows.Forms.TextBox textBoxPatientName;
         private System.Windows.Forms.Label labelAppointmentTime;
         private System.Windows.Forms.Label labelAppointmentDate;
@@ -337,5 +344,6 @@
         private System.Windows.Forms.Label labelDoctorName;
         private System.Windows.Forms.Label labelDoctorCode;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxAppointmentTime;
+        private System.Windows.Forms.ComboBox comboBoxPatientCode;
     }
 }
