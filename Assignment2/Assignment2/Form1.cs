@@ -33,5 +33,10 @@ namespace Assignment2
             Form2 formPatient = new Form2();
             formPatient.Show();
         }
+        private void doctorManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoctorManagementForm formDoctor = new DoctorManagementForm();
+            formDoctor.Show();
+        }
     }
 }
