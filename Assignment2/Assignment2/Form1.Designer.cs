@@ -34,10 +34,10 @@
             this.patientManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apointmentManagmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllPart1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchAppointmentByDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAPatientsAppointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,12 +94,6 @@
             this.consultationToolStripMenuItem.Size = new System.Drawing.Size(128, 29);
             this.consultationToolStripMenuItem.Text = "Consultation";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // showAllPart1ToolStripMenuItem
             // 
             this.showAllPart1ToolStripMenuItem.Name = "showAllPart1ToolStripMenuItem";
@@ -117,6 +111,13 @@
             this.showAPatientsAppointmentsToolStripMenuItem.Name = "showAPatientsAppointmentsToolStripMenuItem";
             this.showAPatientsAppointmentsToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
             this.showAPatientsAppointmentsToolStripMenuItem.Text = "Show a patient\'s appointments";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 

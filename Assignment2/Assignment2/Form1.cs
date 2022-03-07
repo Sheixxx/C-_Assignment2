@@ -16,5 +16,16 @@ namespace Assignment2
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to Exit ?",
+                                     "Press \"Yes\" to confirm!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
