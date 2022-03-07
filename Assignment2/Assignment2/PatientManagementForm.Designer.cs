@@ -1,6 +1,6 @@
 ﻿namespace Assignment2
 {
-    partial class Form2
+    partial class PatientManagementForm
     {
         /// <summary>
         /// Required designer variable.
