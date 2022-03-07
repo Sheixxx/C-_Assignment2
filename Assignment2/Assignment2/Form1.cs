@@ -27,5 +27,11 @@ namespace Assignment2
                 Application.Exit();
             }
         }
+
+        private void doctorManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoctorManagementForm formDoctor = new DoctorManagementForm();
+            formDoctor.Show();
+        }
     }
 }

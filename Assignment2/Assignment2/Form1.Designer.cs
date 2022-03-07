@@ -71,6 +71,7 @@
             this.doctorManagementToolStripMenuItem.Name = "doctorManagementToolStripMenuItem";
             this.doctorManagementToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
             this.doctorManagementToolStripMenuItem.Text = "Doctor Management";
+            this.doctorManagementToolStripMenuItem.Click += new System.EventHandler(this.doctorManagementToolStripMenuItem_Click);
             // 
             // patientManagementToolStripMenuItem
             // 
