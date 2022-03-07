@@ -27,5 +27,11 @@ namespace Assignment2
                 Application.Exit();
             }
         }
+
+        private void patientManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 formPatient = new Form2();
+            formPatient.Show();
+        }
     }
 }
