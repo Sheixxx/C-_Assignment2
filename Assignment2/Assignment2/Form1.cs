@@ -28,6 +28,11 @@ namespace Assignment2
             }
         }
 
+        private void patientManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 formPatient = new Form2();
+            formPatient.Show();
+        }
         private void doctorManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DoctorManagementForm formDoctor = new DoctorManagementForm();
