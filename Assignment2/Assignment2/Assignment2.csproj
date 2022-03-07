@@ -67,6 +67,12 @@
     <Compile Include="DoctorManagementForm.Designer.cs">
       <DependentUpon>DoctorManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentManagement.Designer.cs">
+      <DependentUpon>AppointmentManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DoctorManagementForm.resx">
       <DependentUpon>DoctorManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentManagement.resx">
+      <DependentUpon>AppointmentManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
