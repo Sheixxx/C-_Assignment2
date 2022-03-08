@@ -93,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowAll.Designer.cs">
+      <DependentUpon>ShowAll.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DoctorManagementForm.resx">
       <DependentUpon>DoctorManagementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +120,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowAll.resx">
+      <DependentUpon>ShowAll.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>

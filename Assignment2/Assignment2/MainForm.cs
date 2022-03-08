@@ -44,5 +44,11 @@ namespace Assignment2
             AppointmentManagement formAppointment = new AppointmentManagement();
             formAppointment.Show();
         }
+
+        private void showAllPart1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowAll formShowAll = new ShowAll();
+            formShowAll.Show();
+        }
     }
 }

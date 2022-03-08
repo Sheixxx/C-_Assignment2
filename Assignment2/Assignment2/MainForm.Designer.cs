@@ -54,7 +54,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(711, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // managementSystemToolStripMenuItem
             // 
@@ -102,6 +101,7 @@
             this.showAllPart1ToolStripMenuItem.Name = "showAllPart1ToolStripMenuItem";
             this.showAllPart1ToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.showAllPart1ToolStripMenuItem.Text = "Show All";
+            this.showAllPart1ToolStripMenuItem.Click += new System.EventHandler(this.showAllPart1ToolStripMenuItem_Click);
             // 
             // searchAppointmentByDateToolStripMenuItem
             // 

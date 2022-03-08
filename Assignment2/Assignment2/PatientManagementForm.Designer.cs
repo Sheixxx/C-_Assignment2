@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.patientManagementBox = new System.Windows.Forms.GroupBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.buttonExitPM = new System.Windows.Forms.Button();
             this.buttonDeletePM = new System.Windows.Forms.Button();
             this.buttonEditPM = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             // 
             // patientManagementBox
             // 
+            this.patientManagementBox.Controls.Add(this.labelError);
             this.patientManagementBox.Controls.Add(this.buttonExitPM);
             this.patientManagementBox.Controls.Add(this.buttonDeletePM);
             this.patientManagementBox.Controls.Add(this.buttonEditPM);
@@ -75,6 +77,14 @@
             this.patientManagementBox.TabStop = false;
             this.patientManagementBox.Text = "Patient Management";
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(500, 35);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 16);
+            this.labelError.TabIndex = 17;
+            // 
             // buttonExitPM
             // 
             this.buttonExitPM.Location = new System.Drawing.Point(619, 256);
@@ -83,6 +93,7 @@
             this.buttonExitPM.TabIndex = 16;
             this.buttonExitPM.Text = "Exit";
             this.buttonExitPM.UseVisualStyleBackColor = true;
+            this.buttonExitPM.Click += new System.EventHandler(this.buttonExitPM_Click);
             // 
             // buttonDeletePM
             // 
@@ -92,6 +103,7 @@
             this.buttonDeletePM.TabIndex = 15;
             this.buttonDeletePM.Text = "Delete";
             this.buttonDeletePM.UseVisualStyleBackColor = true;
+            this.buttonDeletePM.Click += new System.EventHandler(this.buttonDeletePM_Click);
             // 
             // buttonEditPM
             // 
@@ -101,6 +113,7 @@
             this.buttonEditPM.TabIndex = 14;
             this.buttonEditPM.Text = "Edit";
             this.buttonEditPM.UseVisualStyleBackColor = true;
+            this.buttonEditPM.Click += new System.EventHandler(this.buttonEditPM_Click);
             // 
             // buttonAddPM
             // 
@@ -110,6 +123,7 @@
             this.buttonAddPM.TabIndex = 13;
             this.buttonAddPM.Text = "Add";
             this.buttonAddPM.UseVisualStyleBackColor = true;
+            this.buttonAddPM.Click += new System.EventHandler(this.buttonAddPM_Click);
             // 
             // buttonSearchPM
             // 
@@ -119,6 +133,7 @@
             this.buttonSearchPM.TabIndex = 12;
             this.buttonSearchPM.Text = "Search";
             this.buttonSearchPM.UseVisualStyleBackColor = true;
+            this.buttonSearchPM.Click += new System.EventHandler(this.buttonSearchPM_Click);
             // 
             // buttonNewPM
             // 
@@ -260,5 +275,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerBirthDatePM;
         private System.Windows.Forms.TextBox textBoxNamePM;
         private System.Windows.Forms.TextBox textBoxCodePM;
+        private System.Windows.Forms.Label labelError;
     }
 }
