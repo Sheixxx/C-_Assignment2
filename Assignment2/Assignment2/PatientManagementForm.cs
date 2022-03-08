@@ -17,19 +17,14 @@ namespace Assignment2
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void buttonNewPM_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            textBoxCodePM.Text = "";
+            textBoxNamePM.Text = "";
+            textBoxAddressPM.Text = "";
+            radioButtonFemininePM.Checked = false;
+            radioButtonMasculinePM.Checked = false;
+            dateTimePickerBirthDatePM.Value = DateTime.Now;
         }
     }
 }

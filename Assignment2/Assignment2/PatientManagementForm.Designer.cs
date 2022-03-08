@@ -68,83 +68,74 @@
             this.patientManagementBox.Controls.Add(this.labelDatePM);
             this.patientManagementBox.Controls.Add(this.labelNamePM);
             this.patientManagementBox.Controls.Add(this.labelCodePM);
-            this.patientManagementBox.Location = new System.Drawing.Point(14, 15);
-            this.patientManagementBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.patientManagementBox.Location = new System.Drawing.Point(12, 12);
             this.patientManagementBox.Name = "patientManagementBox";
-            this.patientManagementBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.patientManagementBox.Size = new System.Drawing.Size(873, 532);
+            this.patientManagementBox.Size = new System.Drawing.Size(776, 426);
             this.patientManagementBox.TabIndex = 0;
             this.patientManagementBox.TabStop = false;
             this.patientManagementBox.Text = "Patient Management";
-            this.patientManagementBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // buttonExitPM
             // 
-            this.buttonExitPM.Location = new System.Drawing.Point(696, 320);
-            this.buttonExitPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExitPM.Location = new System.Drawing.Point(619, 256);
             this.buttonExitPM.Name = "buttonExitPM";
-            this.buttonExitPM.Size = new System.Drawing.Size(158, 35);
+            this.buttonExitPM.Size = new System.Drawing.Size(140, 28);
             this.buttonExitPM.TabIndex = 16;
             this.buttonExitPM.Text = "Exit";
             this.buttonExitPM.UseVisualStyleBackColor = true;
             // 
             // buttonDeletePM
             // 
-            this.buttonDeletePM.Location = new System.Drawing.Point(696, 278);
-            this.buttonDeletePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonDeletePM.Location = new System.Drawing.Point(619, 222);
             this.buttonDeletePM.Name = "buttonDeletePM";
-            this.buttonDeletePM.Size = new System.Drawing.Size(158, 35);
+            this.buttonDeletePM.Size = new System.Drawing.Size(140, 28);
             this.buttonDeletePM.TabIndex = 15;
             this.buttonDeletePM.Text = "Delete";
             this.buttonDeletePM.UseVisualStyleBackColor = true;
             // 
             // buttonEditPM
             // 
-            this.buttonEditPM.Location = new System.Drawing.Point(696, 235);
-            this.buttonEditPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEditPM.Location = new System.Drawing.Point(619, 188);
             this.buttonEditPM.Name = "buttonEditPM";
-            this.buttonEditPM.Size = new System.Drawing.Size(158, 35);
+            this.buttonEditPM.Size = new System.Drawing.Size(140, 28);
             this.buttonEditPM.TabIndex = 14;
             this.buttonEditPM.Text = "Edit";
             this.buttonEditPM.UseVisualStyleBackColor = true;
             // 
             // buttonAddPM
             // 
-            this.buttonAddPM.Location = new System.Drawing.Point(696, 192);
-            this.buttonAddPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddPM.Location = new System.Drawing.Point(619, 154);
             this.buttonAddPM.Name = "buttonAddPM";
-            this.buttonAddPM.Size = new System.Drawing.Size(158, 35);
+            this.buttonAddPM.Size = new System.Drawing.Size(140, 28);
             this.buttonAddPM.TabIndex = 13;
             this.buttonAddPM.Text = "Add";
             this.buttonAddPM.UseVisualStyleBackColor = true;
             // 
             // buttonSearchPM
             // 
-            this.buttonSearchPM.Location = new System.Drawing.Point(696, 150);
-            this.buttonSearchPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSearchPM.Location = new System.Drawing.Point(619, 120);
             this.buttonSearchPM.Name = "buttonSearchPM";
-            this.buttonSearchPM.Size = new System.Drawing.Size(158, 35);
+            this.buttonSearchPM.Size = new System.Drawing.Size(140, 28);
             this.buttonSearchPM.TabIndex = 12;
             this.buttonSearchPM.Text = "Search";
             this.buttonSearchPM.UseVisualStyleBackColor = true;
             // 
             // buttonNewPM
             // 
-            this.buttonNewPM.Location = new System.Drawing.Point(696, 108);
-            this.buttonNewPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonNewPM.Location = new System.Drawing.Point(619, 86);
             this.buttonNewPM.Name = "buttonNewPM";
-            this.buttonNewPM.Size = new System.Drawing.Size(158, 35);
+            this.buttonNewPM.Size = new System.Drawing.Size(140, 28);
             this.buttonNewPM.TabIndex = 11;
             this.buttonNewPM.Text = "New";
             this.buttonNewPM.UseVisualStyleBackColor = true;
+            this.buttonNewPM.Click += new System.EventHandler(this.buttonNewPM_Click);
             // 
             // radioButtonMasculinePM
             // 
             this.radioButtonMasculinePM.AutoSize = true;
-            this.radioButtonMasculinePM.Location = new System.Drawing.Point(192, 465);
-            this.radioButtonMasculinePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonMasculinePM.Location = new System.Drawing.Point(171, 372);
             this.radioButtonMasculinePM.Name = "radioButtonMasculinePM";
-            this.radioButtonMasculinePM.Size = new System.Drawing.Size(105, 24);
+            this.radioButtonMasculinePM.Size = new System.Drawing.Size(89, 20);
             this.radioButtonMasculinePM.TabIndex = 10;
             this.radioButtonMasculinePM.TabStop = true;
             this.radioButtonMasculinePM.Text = "Masculine";
@@ -153,10 +144,9 @@
             // radioButtonFemininePM
             // 
             this.radioButtonFemininePM.AutoSize = true;
-            this.radioButtonFemininePM.Location = new System.Drawing.Point(192, 416);
-            this.radioButtonFemininePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonFemininePM.Location = new System.Drawing.Point(171, 333);
             this.radioButtonFemininePM.Name = "radioButtonFemininePM";
-            this.radioButtonFemininePM.Size = new System.Drawing.Size(99, 24);
+            this.radioButtonFemininePM.Size = new System.Drawing.Size(83, 20);
             this.radioButtonFemininePM.TabIndex = 9;
             this.radioButtonFemininePM.TabStop = true;
             this.radioButtonFemininePM.Text = "Feminine";
@@ -164,91 +154,84 @@
             // 
             // textBoxAddressPM
             // 
-            this.textBoxAddressPM.Location = new System.Drawing.Point(192, 268);
-            this.textBoxAddressPM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxAddressPM.Location = new System.Drawing.Point(171, 214);
             this.textBoxAddressPM.Multiline = true;
             this.textBoxAddressPM.Name = "textBoxAddressPM";
-            this.textBoxAddressPM.Size = new System.Drawing.Size(224, 105);
+            this.textBoxAddressPM.Size = new System.Drawing.Size(200, 85);
             this.textBoxAddressPM.TabIndex = 8;
             // 
             // dateTimePickerBirthDatePM
             // 
-            this.dateTimePickerBirthDatePM.Location = new System.Drawing.Point(192, 191);
-            this.dateTimePickerBirthDatePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePickerBirthDatePM.Location = new System.Drawing.Point(171, 153);
             this.dateTimePickerBirthDatePM.Name = "dateTimePickerBirthDatePM";
-            this.dateTimePickerBirthDatePM.Size = new System.Drawing.Size(224, 26);
+            this.dateTimePickerBirthDatePM.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerBirthDatePM.TabIndex = 7;
             // 
             // textBoxNamePM
             // 
-            this.textBoxNamePM.Location = new System.Drawing.Point(192, 122);
-            this.textBoxNamePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNamePM.Location = new System.Drawing.Point(171, 98);
             this.textBoxNamePM.Name = "textBoxNamePM";
-            this.textBoxNamePM.Size = new System.Drawing.Size(224, 26);
+            this.textBoxNamePM.Size = new System.Drawing.Size(200, 22);
             this.textBoxNamePM.TabIndex = 6;
             // 
             // textBoxCodePM
             // 
-            this.textBoxCodePM.Location = new System.Drawing.Point(192, 59);
-            this.textBoxCodePM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxCodePM.Location = new System.Drawing.Point(171, 47);
             this.textBoxCodePM.Name = "textBoxCodePM";
-            this.textBoxCodePM.Size = new System.Drawing.Size(224, 26);
+            this.textBoxCodePM.Size = new System.Drawing.Size(200, 22);
             this.textBoxCodePM.TabIndex = 5;
             // 
             // labelGenderPM
             // 
             this.labelGenderPM.AutoSize = true;
-            this.labelGenderPM.Location = new System.Drawing.Point(7, 416);
+            this.labelGenderPM.Location = new System.Drawing.Point(6, 333);
             this.labelGenderPM.Name = "labelGenderPM";
-            this.labelGenderPM.Size = new System.Drawing.Size(63, 20);
+            this.labelGenderPM.Size = new System.Drawing.Size(52, 16);
             this.labelGenderPM.TabIndex = 4;
             this.labelGenderPM.Text = "Gender";
-            this.labelGenderPM.Click += new System.EventHandler(this.label5_Click);
             // 
             // labelAddressPM
             // 
             this.labelAddressPM.AutoSize = true;
-            this.labelAddressPM.Location = new System.Drawing.Point(7, 268);
+            this.labelAddressPM.Location = new System.Drawing.Point(6, 214);
             this.labelAddressPM.Name = "labelAddressPM";
-            this.labelAddressPM.Size = new System.Drawing.Size(68, 20);
+            this.labelAddressPM.Size = new System.Drawing.Size(58, 16);
             this.labelAddressPM.TabIndex = 3;
             this.labelAddressPM.Text = "Address";
             // 
             // labelDatePM
             // 
             this.labelDatePM.AutoSize = true;
-            this.labelDatePM.Location = new System.Drawing.Point(7, 191);
+            this.labelDatePM.Location = new System.Drawing.Point(6, 153);
             this.labelDatePM.Name = "labelDatePM";
-            this.labelDatePM.Size = new System.Drawing.Size(81, 20);
+            this.labelDatePM.Size = new System.Drawing.Size(65, 16);
             this.labelDatePM.TabIndex = 2;
             this.labelDatePM.Text = "Birth Date";
             // 
             // labelNamePM
             // 
             this.labelNamePM.AutoSize = true;
-            this.labelNamePM.Location = new System.Drawing.Point(7, 122);
+            this.labelNamePM.Location = new System.Drawing.Point(6, 98);
             this.labelNamePM.Name = "labelNamePM";
-            this.labelNamePM.Size = new System.Drawing.Size(51, 20);
+            this.labelNamePM.Size = new System.Drawing.Size(44, 16);
             this.labelNamePM.TabIndex = 1;
             this.labelNamePM.Text = "Name";
             // 
             // labelCodePM
             // 
             this.labelCodePM.AutoSize = true;
-            this.labelCodePM.Location = new System.Drawing.Point(7, 59);
+            this.labelCodePM.Location = new System.Drawing.Point(6, 47);
             this.labelCodePM.Name = "labelCodePM";
-            this.labelCodePM.Size = new System.Drawing.Size(47, 20);
+            this.labelCodePM.Size = new System.Drawing.Size(40, 16);
             this.labelCodePM.TabIndex = 0;
             this.labelCodePM.Text = "Code";
-            this.labelCodePM.Click += new System.EventHandler(this.label1_Click);
             // 
             // PatientManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 552);
+            this.ClientSize = new System.Drawing.Size(792, 442);
             this.Controls.Add(this.patientManagementBox);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PatientManagementForm";
             this.Text = "PatientManagementForm";
             this.patientManagementBox.ResumeLayout(false);
