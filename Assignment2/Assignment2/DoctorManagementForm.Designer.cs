@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBoxDM = new System.Windows.Forms.GroupBox();
-            this.labelCodeDM = new System.Windows.Forms.Label();
-            this.labelNameDM = new System.Windows.Forms.Label();
-            this.labelTelephoneDM = new System.Windows.Forms.Label();
-            this.labelHiringDateDM = new System.Windows.Forms.Label();
-            this.labelSpecialty = new System.Windows.Forms.Label();
-            this.textBoxCodeDM = new System.Windows.Forms.TextBox();
-            this.textBoxNameDM = new System.Windows.Forms.TextBox();
-            this.textBoxTelephoneDM = new System.Windows.Forms.TextBox();
-            this.textBoxSpecialtyDM = new System.Windows.Forms.TextBox();
-            this.dateTimePickerHiringDate = new System.Windows.Forms.DateTimePicker();
-            this.buttonNewDM = new System.Windows.Forms.Button();
-            this.buttonSearchDM = new System.Windows.Forms.Button();
-            this.buttonAddDM = new System.Windows.Forms.Button();
-            this.buttonEditDM = new System.Windows.Forms.Button();
-            this.buttonDeleteDM = new System.Windows.Forms.Button();
             this.buttonExitDM = new System.Windows.Forms.Button();
+            this.buttonDeleteDM = new System.Windows.Forms.Button();
+            this.buttonEditDM = new System.Windows.Forms.Button();
+            this.buttonAddDM = new System.Windows.Forms.Button();
+            this.buttonSearchDM = new System.Windows.Forms.Button();
+            this.buttonNewDM = new System.Windows.Forms.Button();
+            this.dateTimePickerHiringDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxSpecialtyDM = new System.Windows.Forms.TextBox();
+            this.textBoxTelephoneDM = new System.Windows.Forms.TextBox();
+            this.textBoxNameDM = new System.Windows.Forms.TextBox();
+            this.textBoxCodeDM = new System.Windows.Forms.TextBox();
+            this.labelSpecialty = new System.Windows.Forms.Label();
+            this.labelHiringDateDM = new System.Windows.Forms.Label();
+            this.labelTelephoneDM = new System.Windows.Forms.Label();
+            this.labelNameDM = new System.Windows.Forms.Label();
+            this.labelCodeDM = new System.Windows.Forms.Label();
             this.groupBoxDM.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,121 +73,15 @@
             this.groupBoxDM.TabStop = false;
             this.groupBoxDM.Text = "Doctor Management";
             // 
-            // labelCodeDM
+            // buttonExitDM
             // 
-            this.labelCodeDM.AutoSize = true;
-            this.labelCodeDM.Location = new System.Drawing.Point(33, 71);
-            this.labelCodeDM.Name = "labelCodeDM";
-            this.labelCodeDM.Size = new System.Drawing.Size(47, 20);
-            this.labelCodeDM.TabIndex = 0;
-            this.labelCodeDM.Text = "Code";
-            // 
-            // labelNameDM
-            // 
-            this.labelNameDM.AutoSize = true;
-            this.labelNameDM.Location = new System.Drawing.Point(33, 123);
-            this.labelNameDM.Name = "labelNameDM";
-            this.labelNameDM.Size = new System.Drawing.Size(51, 20);
-            this.labelNameDM.TabIndex = 1;
-            this.labelNameDM.Text = "Name";
-            // 
-            // labelTelephoneDM
-            // 
-            this.labelTelephoneDM.AutoSize = true;
-            this.labelTelephoneDM.Location = new System.Drawing.Point(33, 181);
-            this.labelTelephoneDM.Name = "labelTelephoneDM";
-            this.labelTelephoneDM.Size = new System.Drawing.Size(84, 20);
-            this.labelTelephoneDM.TabIndex = 2;
-            this.labelTelephoneDM.Text = "Telephone";
-            // 
-            // labelHiringDateDM
-            // 
-            this.labelHiringDateDM.AutoSize = true;
-            this.labelHiringDateDM.Location = new System.Drawing.Point(33, 244);
-            this.labelHiringDateDM.Name = "labelHiringDateDM";
-            this.labelHiringDateDM.Size = new System.Drawing.Size(89, 20);
-            this.labelHiringDateDM.TabIndex = 3;
-            this.labelHiringDateDM.Text = "Hiring Date";
-            // 
-            // labelSpecialty
-            // 
-            this.labelSpecialty.AutoSize = true;
-            this.labelSpecialty.Location = new System.Drawing.Point(33, 303);
-            this.labelSpecialty.Name = "labelSpecialty";
-            this.labelSpecialty.Size = new System.Drawing.Size(73, 20);
-            this.labelSpecialty.TabIndex = 4;
-            this.labelSpecialty.Text = "Specialty";
-            // 
-            // textBoxCodeDM
-            // 
-            this.textBoxCodeDM.Location = new System.Drawing.Point(203, 65);
-            this.textBoxCodeDM.Name = "textBoxCodeDM";
-            this.textBoxCodeDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxCodeDM.TabIndex = 5;
-            // 
-            // textBoxNameDM
-            // 
-            this.textBoxNameDM.Location = new System.Drawing.Point(203, 123);
-            this.textBoxNameDM.Name = "textBoxNameDM";
-            this.textBoxNameDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxNameDM.TabIndex = 6;
-            // 
-            // textBoxTelephoneDM
-            // 
-            this.textBoxTelephoneDM.Location = new System.Drawing.Point(203, 181);
-            this.textBoxTelephoneDM.Name = "textBoxTelephoneDM";
-            this.textBoxTelephoneDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxTelephoneDM.TabIndex = 7;
-            // 
-            // textBoxSpecialtyDM
-            // 
-            this.textBoxSpecialtyDM.Location = new System.Drawing.Point(203, 303);
-            this.textBoxSpecialtyDM.Name = "textBoxSpecialtyDM";
-            this.textBoxSpecialtyDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxSpecialtyDM.TabIndex = 9;
-            // 
-            // dateTimePickerHiringDate
-            // 
-            this.dateTimePickerHiringDate.Location = new System.Drawing.Point(203, 244);
-            this.dateTimePickerHiringDate.Name = "dateTimePickerHiringDate";
-            this.dateTimePickerHiringDate.Size = new System.Drawing.Size(243, 26);
-            this.dateTimePickerHiringDate.TabIndex = 10;
-            // 
-            // buttonNewDM
-            // 
-            this.buttonNewDM.Location = new System.Drawing.Point(519, 85);
-            this.buttonNewDM.Name = "buttonNewDM";
-            this.buttonNewDM.Size = new System.Drawing.Size(198, 30);
-            this.buttonNewDM.TabIndex = 11;
-            this.buttonNewDM.Text = "New";
-            this.buttonNewDM.UseVisualStyleBackColor = true;
-            // 
-            // buttonSearchDM
-            // 
-            this.buttonSearchDM.Location = new System.Drawing.Point(519, 121);
-            this.buttonSearchDM.Name = "buttonSearchDM";
-            this.buttonSearchDM.Size = new System.Drawing.Size(198, 30);
-            this.buttonSearchDM.TabIndex = 12;
-            this.buttonSearchDM.Text = "Search";
-            this.buttonSearchDM.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddDM
-            // 
-            this.buttonAddDM.Location = new System.Drawing.Point(519, 157);
-            this.buttonAddDM.Name = "buttonAddDM";
-            this.buttonAddDM.Size = new System.Drawing.Size(198, 30);
-            this.buttonAddDM.TabIndex = 13;
-            this.buttonAddDM.Text = "Add";
-            this.buttonAddDM.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditDM
-            // 
-            this.buttonEditDM.Location = new System.Drawing.Point(519, 193);
-            this.buttonEditDM.Name = "buttonEditDM";
-            this.buttonEditDM.Size = new System.Drawing.Size(198, 30);
-            this.buttonEditDM.TabIndex = 14;
-            this.buttonEditDM.Text = "Edit";
-            this.buttonEditDM.UseVisualStyleBackColor = true;
+            this.buttonExitDM.Location = new System.Drawing.Point(519, 265);
+            this.buttonExitDM.Name = "buttonExitDM";
+            this.buttonExitDM.Size = new System.Drawing.Size(198, 30);
+            this.buttonExitDM.TabIndex = 16;
+            this.buttonExitDM.Text = "Exit";
+            this.buttonExitDM.UseVisualStyleBackColor = true;
+            this.buttonExitDM.Click += new System.EventHandler(this.buttonExitDM_Click);
             // 
             // buttonDeleteDM
             // 
@@ -198,14 +92,123 @@
             this.buttonDeleteDM.Text = "Delete";
             this.buttonDeleteDM.UseVisualStyleBackColor = true;
             // 
-            // buttonExitDM
+            // buttonEditDM
             // 
-            this.buttonExitDM.Location = new System.Drawing.Point(519, 265);
-            this.buttonExitDM.Name = "buttonExitDM";
-            this.buttonExitDM.Size = new System.Drawing.Size(198, 30);
-            this.buttonExitDM.TabIndex = 16;
-            this.buttonExitDM.Text = "Exit";
-            this.buttonExitDM.UseVisualStyleBackColor = true;
+            this.buttonEditDM.Location = new System.Drawing.Point(519, 193);
+            this.buttonEditDM.Name = "buttonEditDM";
+            this.buttonEditDM.Size = new System.Drawing.Size(198, 30);
+            this.buttonEditDM.TabIndex = 14;
+            this.buttonEditDM.Text = "Edit";
+            this.buttonEditDM.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddDM
+            // 
+            this.buttonAddDM.Location = new System.Drawing.Point(519, 157);
+            this.buttonAddDM.Name = "buttonAddDM";
+            this.buttonAddDM.Size = new System.Drawing.Size(198, 30);
+            this.buttonAddDM.TabIndex = 13;
+            this.buttonAddDM.Text = "Add";
+            this.buttonAddDM.UseVisualStyleBackColor = true;
+            // 
+            // buttonSearchDM
+            // 
+            this.buttonSearchDM.Location = new System.Drawing.Point(519, 121);
+            this.buttonSearchDM.Name = "buttonSearchDM";
+            this.buttonSearchDM.Size = new System.Drawing.Size(198, 30);
+            this.buttonSearchDM.TabIndex = 12;
+            this.buttonSearchDM.Text = "Search";
+            this.buttonSearchDM.UseVisualStyleBackColor = true;
+            this.buttonSearchDM.Click += new System.EventHandler(this.buttonSearchDM_Click);
+            // 
+            // buttonNewDM
+            // 
+            this.buttonNewDM.Location = new System.Drawing.Point(519, 85);
+            this.buttonNewDM.Name = "buttonNewDM";
+            this.buttonNewDM.Size = new System.Drawing.Size(198, 30);
+            this.buttonNewDM.TabIndex = 11;
+            this.buttonNewDM.Text = "New";
+            this.buttonNewDM.UseVisualStyleBackColor = true;
+            this.buttonNewDM.Click += new System.EventHandler(this.buttonNewDM_Click);
+            // 
+            // dateTimePickerHiringDate
+            // 
+            this.dateTimePickerHiringDate.Location = new System.Drawing.Point(203, 244);
+            this.dateTimePickerHiringDate.Name = "dateTimePickerHiringDate";
+            this.dateTimePickerHiringDate.Size = new System.Drawing.Size(243, 26);
+            this.dateTimePickerHiringDate.TabIndex = 10;
+            // 
+            // textBoxSpecialtyDM
+            // 
+            this.textBoxSpecialtyDM.Location = new System.Drawing.Point(203, 303);
+            this.textBoxSpecialtyDM.Name = "textBoxSpecialtyDM";
+            this.textBoxSpecialtyDM.Size = new System.Drawing.Size(243, 26);
+            this.textBoxSpecialtyDM.TabIndex = 9;
+            // 
+            // textBoxTelephoneDM
+            // 
+            this.textBoxTelephoneDM.Location = new System.Drawing.Point(203, 181);
+            this.textBoxTelephoneDM.Name = "textBoxTelephoneDM";
+            this.textBoxTelephoneDM.Size = new System.Drawing.Size(243, 26);
+            this.textBoxTelephoneDM.TabIndex = 7;
+            // 
+            // textBoxNameDM
+            // 
+            this.textBoxNameDM.Location = new System.Drawing.Point(203, 123);
+            this.textBoxNameDM.Name = "textBoxNameDM";
+            this.textBoxNameDM.Size = new System.Drawing.Size(243, 26);
+            this.textBoxNameDM.TabIndex = 6;
+            // 
+            // textBoxCodeDM
+            // 
+            this.textBoxCodeDM.Location = new System.Drawing.Point(203, 65);
+            this.textBoxCodeDM.Name = "textBoxCodeDM";
+            this.textBoxCodeDM.Size = new System.Drawing.Size(243, 26);
+            this.textBoxCodeDM.TabIndex = 5;
+            // 
+            // labelSpecialty
+            // 
+            this.labelSpecialty.AutoSize = true;
+            this.labelSpecialty.Location = new System.Drawing.Point(33, 303);
+            this.labelSpecialty.Name = "labelSpecialty";
+            this.labelSpecialty.Size = new System.Drawing.Size(73, 20);
+            this.labelSpecialty.TabIndex = 4;
+            this.labelSpecialty.Text = "Specialty";
+            // 
+            // labelHiringDateDM
+            // 
+            this.labelHiringDateDM.AutoSize = true;
+            this.labelHiringDateDM.Location = new System.Drawing.Point(33, 244);
+            this.labelHiringDateDM.Name = "labelHiringDateDM";
+            this.labelHiringDateDM.Size = new System.Drawing.Size(89, 20);
+            this.labelHiringDateDM.TabIndex = 3;
+            this.labelHiringDateDM.Text = "Hiring Date";
+            // 
+            // labelTelephoneDM
+            // 
+            this.labelTelephoneDM.AutoSize = true;
+            this.labelTelephoneDM.Location = new System.Drawing.Point(33, 181);
+            this.labelTelephoneDM.Name = "labelTelephoneDM";
+            this.labelTelephoneDM.Size = new System.Drawing.Size(84, 20);
+            this.labelTelephoneDM.TabIndex = 2;
+            this.labelTelephoneDM.Text = "Telephone";
+            // 
+            // labelNameDM
+            // 
+            this.labelNameDM.AutoSize = true;
+            this.labelNameDM.Location = new System.Drawing.Point(33, 123);
+            this.labelNameDM.Name = "labelNameDM";
+            this.labelNameDM.Size = new System.Drawing.Size(51, 20);
+            this.labelNameDM.TabIndex = 1;
+            this.labelNameDM.Text = "Name";
+            // 
+            // labelCodeDM
+            // 
+            this.labelCodeDM.AutoSize = true;
+            this.labelCodeDM.Location = new System.Drawing.Point(33, 71);
+            this.labelCodeDM.Name = "labelCodeDM";
+            this.labelCodeDM.Size = new System.Drawing.Size(47, 20);
+            this.labelCodeDM.TabIndex = 0;
+            this.labelCodeDM.Text = "Code";
             // 
             // DoctorManagementForm
             // 

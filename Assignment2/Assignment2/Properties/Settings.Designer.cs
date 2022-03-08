@@ -33,5 +33,16 @@ namespace Assignment2.Properties {
                 return ((string)(this["HospitalConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J8469GL\\SQLEXPRESS;Initial Catalog=Hospital;Integrated Securi" +
+            "ty=True")]
+        public string HospitalConnectionString1 {
+            get {
+                return ((string)(this["HospitalConnectionString1"]));
+            }
+        }
     }
 }
