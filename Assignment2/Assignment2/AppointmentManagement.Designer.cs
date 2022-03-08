@@ -120,6 +120,7 @@
             // 
             // comboBoxDoctorCode
             // 
+            this.comboBoxDoctorCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDoctorCode.FormattingEnabled = true;
             this.comboBoxDoctorCode.Location = new System.Drawing.Point(166, 32);
             this.comboBoxDoctorCode.Name = "comboBoxDoctorCode";
@@ -186,9 +187,12 @@
             // maskedTextBoxAppointmentTime
             // 
             this.maskedTextBoxAppointmentTime.Location = new System.Drawing.Point(144, 83);
+            this.maskedTextBoxAppointmentTime.Mask = "00:00";
             this.maskedTextBoxAppointmentTime.Name = "maskedTextBoxAppointmentTime";
             this.maskedTextBoxAppointmentTime.Size = new System.Drawing.Size(231, 22);
             this.maskedTextBoxAppointmentTime.TabIndex = 8;
+            this.maskedTextBoxAppointmentTime.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxAppointmentTime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxAppointmentTime_MaskInputRejected);
             // 
             // dateTimePicker1
             // 
@@ -235,6 +239,7 @@
             // 
             // comboBoxPatientCode
             // 
+            this.comboBoxPatientCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatientCode.FormattingEnabled = true;
             this.comboBoxPatientCode.Location = new System.Drawing.Point(153, 43);
             this.comboBoxPatientCode.Name = "comboBoxPatientCode";

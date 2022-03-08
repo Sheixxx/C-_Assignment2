@@ -21,11 +21,19 @@ namespace Assignment2
 
         public void init()
         {
-            var docteurId = from x in db.Doctor select x.DoctorId;
-            comboBoxDoctorCode.DataSource = docteurId;
+            try
+            {
+                var docteurId = from x in db.Doctor select x.DoctorId;
+                comboBoxDoctorCode.DataSource = docteurId;
 
-            var patientId = from x in db.Patient select x.PatientId;
-            comboBoxPatientCode.DataSource = patientId;
+                var patientId = from x in db.Patient select x.PatientId;
+                comboBoxPatientCode.DataSource = patientId;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -48,31 +56,92 @@ namespace Assignment2
             Console.WriteLine("date :" + dateTimePicker1.Text);
             Console.WriteLine("time :" + maskedTextBoxAppointmentTime.Text);
 
+            Appointments newAppointment;
+            newAppointment = new Appointments();
+            if (Int32.TryParse(comboBoxDoctorCode.Text, out int codeDoctor) && Int32.TryParse(comboBoxPatientCode.Text, out int codePatient))
+            {
+                newAppointment.DoctorId = codeDoctor;
+                newAppointment.PatientId = codePatient;
+            }
+            else
+            {
+                MessageBox.Show("The value in Patient Code or Doctor code is not a number. ");
+                return;
+            }
+
+            if(dateTimePicker1.Value < DateTime.Today)
+            {
+                MessageBox.Show("The selected date is not today or futur day.");
+                return;
+            }
+            else
+            {
+                newAppointment.AppointmentDate = dateTimePicker1.Value;
+            }
+
+            TimeSpan timeAppointment;
+            if (TimeSpan.TryParse(maskedTextBoxAppointmentTime.Text, out timeAppointment))
+            {
+                newAppointment.AppointmentTime = timeAppointment;
+                MessageBox.Show("ok");
+            }
+            else
+            {
+                MessageBox.Show("Time is not valid");
+                return;
+            }
+
+            db.Appointments.InsertOnSubmit(newAppointment);
+
+            try
+            {
+                db.SubmitChanges();
+                MessageBox.Show("New Appointment added to the DB !");
+                init();
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+                return;
+            }
+
         }
 
         private void comboBoxPatientCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var patientInfo = db.Patient.First(x => x.PatientId.Equals(comboBoxPatientCode.SelectedItem));
-
-            textBoxPatientName.Text = patientInfo.PatientName.Trim();
-            if(patientInfo.PatientGender.Trim() == "M")
-            {
-                radioButtonMale.Checked = true;
+            try 
+            { 
+                var patientInfo = db.Patient.First(x => x.PatientId.Equals(comboBoxPatientCode.SelectedItem));
+                textBoxPatientName.Text = patientInfo.PatientName.Trim();
+                if (patientInfo.PatientGender.Trim() == "M")
+                {
+                    radioButtonMale.Checked = true;
+                }
+                else if (patientInfo.PatientGender.Trim() == "F")
+                {
+                    radioButtonFemale.Checked = true;
+                }
             }
-            else if (patientInfo.PatientGender.Trim() == "F")
+            catch (Exception ex)
             {
-                radioButtonFemale.Checked = true;
+                Console.WriteLine(ex.Message);
             }
-
         }
 
         private void comboBoxDoctorCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var doctorInfo = db.Doctor.First(x => x.DoctorId.Equals(comboBoxDoctorCode.SelectedItem));
+            try
+            {
+                var doctorInfo = db.Doctor.First(x => x.DoctorId.Equals(comboBoxDoctorCode.SelectedItem));
 
-            textBoxDoctorName.Text = doctorInfo.DoctorName.Trim();
-            textBoxDoctorSpeciality.Text = doctorInfo.DoctorSpecialism.Trim();
-        }
+                textBoxDoctorName.Text = doctorInfo.DoctorName.Trim();
+                textBoxDoctorSpeciality.Text = doctorInfo.DoctorSpecialism.Trim();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+}
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
@@ -98,5 +167,9 @@ namespace Assignment2
             }
         }
 
+        private void maskedTextBoxAppointmentTime_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
