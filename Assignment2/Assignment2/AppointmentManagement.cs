@@ -80,7 +80,14 @@ namespace Assignment2
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string message = "Are you shure you want to exit appointment Form ?";
+            string caption = "Appointment Form Exit";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if(result == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
