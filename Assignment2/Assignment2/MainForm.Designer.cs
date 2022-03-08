@@ -85,6 +85,7 @@
             this.apointmentManagmentToolStripMenuItem.Name = "apointmentManagmentToolStripMenuItem";
             this.apointmentManagmentToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.apointmentManagmentToolStripMenuItem.Text = "Apointment Managment";
+            this.apointmentManagmentToolStripMenuItem.Click += new System.EventHandler(this.apointmentManagmentToolStripMenuItem_Click);
             // 
             // consultationToolStripMenuItem
             // 
