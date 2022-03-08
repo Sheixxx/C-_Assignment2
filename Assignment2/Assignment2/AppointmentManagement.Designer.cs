@@ -178,7 +178,7 @@
             this.groupBoxAppointment.Controls.Add(this.labelAppointmentDate);
             this.groupBoxAppointment.Location = new System.Drawing.Point(12, 283);
             this.groupBoxAppointment.Name = "groupBoxAppointment";
-            this.groupBoxAppointment.Size = new System.Drawing.Size(356, 135);
+            this.groupBoxAppointment.Size = new System.Drawing.Size(393, 135);
             this.groupBoxAppointment.TabIndex = 1;
             this.groupBoxAppointment.TabStop = false;
             this.groupBoxAppointment.Text = "groupBoxAppointment";
@@ -187,14 +187,14 @@
             // 
             this.maskedTextBoxAppointmentTime.Location = new System.Drawing.Point(144, 83);
             this.maskedTextBoxAppointmentTime.Name = "maskedTextBoxAppointmentTime";
-            this.maskedTextBoxAppointmentTime.Size = new System.Drawing.Size(200, 22);
+            this.maskedTextBoxAppointmentTime.Size = new System.Drawing.Size(231, 22);
             this.maskedTextBoxAppointmentTime.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(144, 39);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(231, 22);
             this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 

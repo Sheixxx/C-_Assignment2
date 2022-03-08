@@ -16,12 +16,16 @@ namespace Assignment2
         public AppointmentManagement()
         {
             InitializeComponent();
+            init();
+        }
+
+        public void init()
+        {
             var docteurId = from x in db.Doctor select x.DoctorId;
             comboBoxDoctorCode.DataSource = docteurId;
-            
+
             var patientId = from x in db.Patient select x.PatientId;
             comboBoxPatientCode.DataSource = patientId;
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,8 +45,9 @@ namespace Assignment2
 
         private void buttonAddAppointment_Click(object sender, EventArgs e)
         {
-            
-            
+            Console.WriteLine("date :" + dateTimePicker1.Text);
+            Console.WriteLine("time :" + maskedTextBoxAppointmentTime.Text);
+
         }
 
         private void comboBoxPatientCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,11 +81,14 @@ namespace Assignment2
             textBoxPatientName.Clear();
             radioButtonFemale.Checked=false;
             radioButtonMale.Checked=false;
+            dateTimePicker1.Value = DateTime.Today;
+            maskedTextBoxAppointmentTime.Clear();
+            init();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            string message = "Are you shure you want to exit appointment Form ?";
+            string message = "Are you shure you want to exit Appointment Management ?";
             string caption = "Appointment Form Exit";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, caption, buttons);
