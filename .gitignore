@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Assignment2/Assignment2/DataClasses1.designer.cs
+Assignment2/Assignment2/DataClasses1.dbml.layout
+Assignment2/Assignment2/DataClasses1.dbml
