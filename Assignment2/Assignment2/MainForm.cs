@@ -50,5 +50,11 @@ namespace Assignment2
             ShowAll formShowAll = new ShowAll();
             formShowAll.Show();
         }
+
+        private void searchAppointmentByDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchAppointment formSearchAppointment = new SearchAppointment();
+            formSearchAppointment.Show();
+        }
     }
 }

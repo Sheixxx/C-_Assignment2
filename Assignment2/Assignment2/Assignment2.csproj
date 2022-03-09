@@ -79,6 +79,12 @@
     <Compile Include="AppointmentManagement.Designer.cs">
       <DependentUpon>AppointmentManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAppointment.Designer.cs">
+      <DependentUpon>SearchAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchAppointment.resx">
+      <DependentUpon>SearchAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowAll.resx">
       <DependentUpon>ShowAll.cs</DependentUpon>
     </EmbeddedResource>

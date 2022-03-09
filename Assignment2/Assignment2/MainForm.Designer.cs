@@ -108,6 +108,7 @@
             this.searchAppointmentByDateToolStripMenuItem.Name = "searchAppointmentByDateToolStripMenuItem";
             this.searchAppointmentByDateToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.searchAppointmentByDateToolStripMenuItem.Text = "Search appointment by date";
+            this.searchAppointmentByDateToolStripMenuItem.Click += new System.EventHandler(this.searchAppointmentByDateToolStripMenuItem_Click);
             // 
             // showAPatientsAppointmentsToolStripMenuItem
             // 
