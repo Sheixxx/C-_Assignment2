@@ -49,15 +49,14 @@ namespace Assignment2
 
             if (textBoxCodePM.Text.Length == 0)
             {
-                labelError.Text = "Please fill in a code";
+                MessageBox.Show("Please fill in a code");
             } else
             {
-                labelError.Text = "";
                 patientCode = Convert.ToInt32(textBoxCodePM.Text);
 
                 if (!inDataBase(patientCode)){
                     /*throw new ArgumentException("L'identifiant ne correspond à aucun patient");*/
-                    labelError.Text = "L'identifiant ne correspond à aucun patient";
+                    MessageBox.Show("L'identifiant ne correspond à aucun patient");
                 }
                 else
                 {
@@ -90,11 +89,11 @@ namespace Assignment2
 
             if (textBoxCodePM.Text.Length == 0 || textBoxNamePM.Text.Length == 0 || (radioButtonFemininePM.Checked == false && radioButtonMasculinePM.Checked == false))
             {
-                labelError.Text = "Fill in all fields to add a new Patient";
+                MessageBox.Show("Fill in all fields to add a new Patient");
             }
             else if (inDataBase(Convert.ToInt32(textBoxCodePM.Text)))
             {
-                labelError.Text = "This code is already assigned to a patient";
+                MessageBox.Show("This code is already assigned to a patient");
             }
             else
             {
@@ -120,13 +119,12 @@ namespace Assignment2
                 try
                 {
                     db.SubmitChanges();
-                    labelError.Text = "New Patient added to the DB !";
+                    MessageBox.Show("New Patient added to the DB !");
                     resetData();
                 }
                 catch (Exception error)
                 {
                     Console.WriteLine(error.Message);
-                    labelError.Text = error.Message;
                 }
                 
      
@@ -141,7 +139,7 @@ namespace Assignment2
 
             if (textBoxCodePM.Text.Length == 0 || textBoxNamePM.Text.Length == 0 || (radioButtonFemininePM.Checked == false && radioButtonMasculinePM.Checked == false))
             {
-                labelError.Text = "You need to load a patient before Edit";
+                MessageBox.Show("You need to load a patient before Edit");
             }
             else
             {
@@ -166,13 +164,12 @@ namespace Assignment2
                     try
                     {
                         db.SubmitChanges();
-                        labelError.Text = "The patient has been well edited !";
+                        MessageBox.Show("The patient has been well edited !");
                         resetData();
                     }
                     catch (Exception error)
                     {
                         Console.WriteLine(error.Message);
-                        labelError.Text = error.Message;
                     }
                 }
                 
@@ -185,7 +182,7 @@ namespace Assignment2
 
             if (textBoxCodePM.Text.Length == 0 || textBoxNamePM.Text.Length == 0 || (radioButtonFemininePM.Checked == false && radioButtonMasculinePM.Checked == false))
             {
-                labelError.Text = "You need to load a patient before Edit";
+                MessageBox.Show("You need to load a patient before Edit");
             }
             else
             {
@@ -197,13 +194,12 @@ namespace Assignment2
                     try
                     {
                         db.SubmitChanges();
-                        labelError.Text = "The patient has been well deleted !";
+                        MessageBox.Show("The patient has been well deleted !");
                         resetData();
                     }
                     catch (Exception error)
                     {
                         Console.WriteLine(error.Message);
-                        labelError.Text = error.Message;
                     }
                 }
                 
