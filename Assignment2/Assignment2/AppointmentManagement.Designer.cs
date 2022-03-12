@@ -254,6 +254,7 @@
             this.textBoxPatientName.ReadOnly = true;
             this.textBoxPatientName.Size = new System.Drawing.Size(121, 22);
             this.textBoxPatientName.TabIndex = 3;
+            this.textBoxPatientName.TextChanged += new System.EventHandler(this.textBoxPatientName_TextChanged);
             // 
             // labelPatientGender
             // 

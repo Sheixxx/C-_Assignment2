@@ -53,9 +53,6 @@ namespace Assignment2
 
         private void buttonAddAppointment_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("date :" + dateTimePicker1.Text);
-            Console.WriteLine("time :" + maskedTextBoxAppointmentTime.Text);
-
             Appointments newAppointment;
             newAppointment = new Appointments();
             if (Int32.TryParse(comboBoxDoctorCode.Text, out int codeDoctor) && Int32.TryParse(comboBoxPatientCode.Text, out int codePatient))
@@ -83,7 +80,6 @@ namespace Assignment2
             if (TimeSpan.TryParse(maskedTextBoxAppointmentTime.Text, out timeAppointment))
             {
                 newAppointment.AppointmentTime = timeAppointment;
-                MessageBox.Show("ok");
             }
             else
             {
@@ -91,10 +87,9 @@ namespace Assignment2
                 return;
             }
 
-            db.Appointments.InsertOnSubmit(newAppointment);
-
             try
             {
+                db.Appointments.InsertOnSubmit(newAppointment);
                 db.SubmitChanges();
                 MessageBox.Show("New Appointment added to the DB !");
                 init();
@@ -168,6 +163,11 @@ namespace Assignment2
         }
 
         private void maskedTextBoxAppointmentTime_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBoxPatientName_TextChanged(object sender, EventArgs e)
         {
 
         }

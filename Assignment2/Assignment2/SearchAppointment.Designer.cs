@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBoxDate = new System.Windows.Forms.GroupBox();
-            this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
-            this.groupBoxPatient = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelDoctorName = new System.Windows.Forms.Label();
-            this.labelDoctorSpeciality = new System.Windows.Forms.Label();
-            this.labelPatientName = new System.Windows.Forms.Label();
-            this.labelPatientBirthday = new System.Windows.Forms.Label();
-            this.textBoxDoctorName = new System.Windows.Forms.TextBox();
-            this.textBoxDoctorSpeciality = new System.Windows.Forms.TextBox();
-            this.textBoxPatientName = new System.Windows.Forms.TextBox();
-            this.dateTimePickerPatientBirthday = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerSelection = new System.Windows.Forms.DateTimePicker();
-            this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.dateTimePickerSelection = new System.Windows.Forms.DateTimePicker();
+            this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
+            this.textBoxDoctorSpeciality = new System.Windows.Forms.TextBox();
+            this.textBoxDoctorName = new System.Windows.Forms.TextBox();
+            this.labelDoctorSpeciality = new System.Windows.Forms.Label();
+            this.labelDoctorName = new System.Windows.Forms.Label();
+            this.groupBoxPatient = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerPatientBirthday = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPatientName = new System.Windows.Forms.TextBox();
+            this.labelPatientBirthday = new System.Windows.Forms.Label();
+            this.labelPatientName = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBoxDate.SuspendLayout();
             this.groupBoxDoctor.SuspendLayout();
             this.groupBoxPatient.SuspendLayout();
@@ -61,6 +61,34 @@
             this.groupBoxDate.TabStop = false;
             this.groupBoxDate.Text = "Choose the date";
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(666, 57);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Location = new System.Drawing.Point(666, 21);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.Text = "Ok";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
+            // dateTimePickerSelection
+            // 
+            this.dateTimePickerSelection.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSelection.Location = new System.Drawing.Point(35, 43);
+            this.dateTimePickerSelection.Name = "dateTimePickerSelection";
+            this.dateTimePickerSelection.Size = new System.Drawing.Size(181, 22);
+            this.dateTimePickerSelection.TabIndex = 0;
+            // 
             // groupBoxDoctor
             // 
             this.groupBoxDoctor.Controls.Add(this.textBoxDoctorSpeciality);
@@ -73,6 +101,40 @@
             this.groupBoxDoctor.TabIndex = 1;
             this.groupBoxDoctor.TabStop = false;
             this.groupBoxDoctor.Text = "Doctor";
+            // 
+            // textBoxDoctorSpeciality
+            // 
+            this.textBoxDoctorSpeciality.Location = new System.Drawing.Point(94, 83);
+            this.textBoxDoctorSpeciality.Name = "textBoxDoctorSpeciality";
+            this.textBoxDoctorSpeciality.ReadOnly = true;
+            this.textBoxDoctorSpeciality.Size = new System.Drawing.Size(100, 22);
+            this.textBoxDoctorSpeciality.TabIndex = 5;
+            // 
+            // textBoxDoctorName
+            // 
+            this.textBoxDoctorName.Location = new System.Drawing.Point(94, 37);
+            this.textBoxDoctorName.Name = "textBoxDoctorName";
+            this.textBoxDoctorName.ReadOnly = true;
+            this.textBoxDoctorName.Size = new System.Drawing.Size(100, 22);
+            this.textBoxDoctorName.TabIndex = 4;
+            // 
+            // labelDoctorSpeciality
+            // 
+            this.labelDoctorSpeciality.AutoSize = true;
+            this.labelDoctorSpeciality.Location = new System.Drawing.Point(18, 89);
+            this.labelDoctorSpeciality.Name = "labelDoctorSpeciality";
+            this.labelDoctorSpeciality.Size = new System.Drawing.Size(66, 16);
+            this.labelDoctorSpeciality.TabIndex = 4;
+            this.labelDoctorSpeciality.Text = "Speciality";
+            // 
+            // labelDoctorName
+            // 
+            this.labelDoctorName.AutoSize = true;
+            this.labelDoctorName.Location = new System.Drawing.Point(18, 40);
+            this.labelDoctorName.Name = "labelDoctorName";
+            this.labelDoctorName.Size = new System.Drawing.Size(44, 16);
+            this.labelDoctorName.TabIndex = 0;
+            this.labelDoctorName.Text = "Name";
             // 
             // groupBoxPatient
             // 
@@ -87,77 +149,6 @@
             this.groupBoxPatient.TabStop = false;
             this.groupBoxPatient.Text = "Patient";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 118);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // labelDoctorName
-            // 
-            this.labelDoctorName.AutoSize = true;
-            this.labelDoctorName.Location = new System.Drawing.Point(18, 40);
-            this.labelDoctorName.Name = "labelDoctorName";
-            this.labelDoctorName.Size = new System.Drawing.Size(44, 16);
-            this.labelDoctorName.TabIndex = 0;
-            this.labelDoctorName.Text = "Name";
-            // 
-            // labelDoctorSpeciality
-            // 
-            this.labelDoctorSpeciality.AutoSize = true;
-            this.labelDoctorSpeciality.Location = new System.Drawing.Point(18, 89);
-            this.labelDoctorSpeciality.Name = "labelDoctorSpeciality";
-            this.labelDoctorSpeciality.Size = new System.Drawing.Size(66, 16);
-            this.labelDoctorSpeciality.TabIndex = 4;
-            this.labelDoctorSpeciality.Text = "Speciality";
-            // 
-            // labelPatientName
-            // 
-            this.labelPatientName.AutoSize = true;
-            this.labelPatientName.Location = new System.Drawing.Point(26, 40);
-            this.labelPatientName.Name = "labelPatientName";
-            this.labelPatientName.Size = new System.Drawing.Size(44, 16);
-            this.labelPatientName.TabIndex = 4;
-            this.labelPatientName.Text = "Name";
-            this.labelPatientName.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // labelPatientBirthday
-            // 
-            this.labelPatientBirthday.AutoSize = true;
-            this.labelPatientBirthday.Location = new System.Drawing.Point(26, 89);
-            this.labelPatientBirthday.Name = "labelPatientBirthday";
-            this.labelPatientBirthday.Size = new System.Drawing.Size(65, 16);
-            this.labelPatientBirthday.TabIndex = 5;
-            this.labelPatientBirthday.Text = "Birth Date";
-            // 
-            // textBoxDoctorName
-            // 
-            this.textBoxDoctorName.Location = new System.Drawing.Point(94, 37);
-            this.textBoxDoctorName.Name = "textBoxDoctorName";
-            this.textBoxDoctorName.ReadOnly = true;
-            this.textBoxDoctorName.Size = new System.Drawing.Size(100, 22);
-            this.textBoxDoctorName.TabIndex = 4;
-            // 
-            // textBoxDoctorSpeciality
-            // 
-            this.textBoxDoctorSpeciality.Location = new System.Drawing.Point(94, 83);
-            this.textBoxDoctorSpeciality.Name = "textBoxDoctorSpeciality";
-            this.textBoxDoctorSpeciality.ReadOnly = true;
-            this.textBoxDoctorSpeciality.Size = new System.Drawing.Size(100, 22);
-            this.textBoxDoctorSpeciality.TabIndex = 5;
-            // 
-            // textBoxPatientName
-            // 
-            this.textBoxPatientName.Location = new System.Drawing.Point(127, 37);
-            this.textBoxPatientName.Name = "textBoxPatientName";
-            this.textBoxPatientName.ReadOnly = true;
-            this.textBoxPatientName.Size = new System.Drawing.Size(100, 22);
-            this.textBoxPatientName.TabIndex = 5;
-            // 
             // dateTimePickerPatientBirthday
             // 
             this.dateTimePickerPatientBirthday.Checked = false;
@@ -170,31 +161,43 @@
             this.dateTimePickerPatientBirthday.TabIndex = 6;
             this.dateTimePickerPatientBirthday.TabStop = false;
             // 
-            // dateTimePickerSelection
+            // textBoxPatientName
             // 
-            this.dateTimePickerSelection.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSelection.Location = new System.Drawing.Point(35, 43);
-            this.dateTimePickerSelection.Name = "dateTimePickerSelection";
-            this.dateTimePickerSelection.Size = new System.Drawing.Size(181, 22);
-            this.dateTimePickerSelection.TabIndex = 0;
+            this.textBoxPatientName.Location = new System.Drawing.Point(127, 37);
+            this.textBoxPatientName.Name = "textBoxPatientName";
+            this.textBoxPatientName.ReadOnly = true;
+            this.textBoxPatientName.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPatientName.TabIndex = 5;
             // 
-            // buttonOk
+            // labelPatientBirthday
             // 
-            this.buttonOk.Location = new System.Drawing.Point(666, 21);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "Ok";
-            this.buttonOk.UseVisualStyleBackColor = true;
+            this.labelPatientBirthday.AutoSize = true;
+            this.labelPatientBirthday.Location = new System.Drawing.Point(26, 89);
+            this.labelPatientBirthday.Name = "labelPatientBirthday";
+            this.labelPatientBirthday.Size = new System.Drawing.Size(65, 16);
+            this.labelPatientBirthday.TabIndex = 5;
+            this.labelPatientBirthday.Text = "Birth Date";
             // 
-            // buttonCancel
+            // labelPatientName
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(666, 57);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.labelPatientName.AutoSize = true;
+            this.labelPatientName.Location = new System.Drawing.Point(26, 40);
+            this.labelPatientName.Name = "labelPatientName";
+            this.labelPatientName.Size = new System.Drawing.Size(44, 16);
+            this.labelPatientName.TabIndex = 4;
+            this.labelPatientName.Text = "Name";
+            this.labelPatientName.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 118);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SearchAppointment
             // 

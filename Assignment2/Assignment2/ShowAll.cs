@@ -36,5 +36,10 @@ namespace Assignment2
             var info = (from x in db.Appointments select x).ToList();
             dataGridViewTables.DataSource = info;
         }
+
+        private void dataGridViewTables_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

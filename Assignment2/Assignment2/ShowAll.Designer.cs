@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxChoice = new System.Windows.Forms.GroupBox();
-            this.radioButtonDoctors = new System.Windows.Forms.RadioButton();
-            this.radioButtonPatient = new System.Windows.Forms.RadioButton();
             this.radioButtonAppointment = new System.Windows.Forms.RadioButton();
+            this.radioButtonPatient = new System.Windows.Forms.RadioButton();
+            this.radioButtonDoctors = new System.Windows.Forms.RadioButton();
             this.dataGridViewTables = new System.Windows.Forms.DataGridView();
             this.groupBoxChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTables)).BeginInit();
@@ -49,17 +49,17 @@
             this.groupBoxChoice.TabStop = false;
             this.groupBoxChoice.Text = "Choice";
             // 
-            // radioButtonDoctors
+            // radioButtonAppointment
             // 
-            this.radioButtonDoctors.AutoSize = true;
-            this.radioButtonDoctors.Location = new System.Drawing.Point(6, 42);
-            this.radioButtonDoctors.Name = "radioButtonDoctors";
-            this.radioButtonDoctors.Size = new System.Drawing.Size(114, 20);
-            this.radioButtonDoctors.TabIndex = 0;
-            this.radioButtonDoctors.TabStop = true;
-            this.radioButtonDoctors.Text = "All the Doctors";
-            this.radioButtonDoctors.UseVisualStyleBackColor = true;
-            this.radioButtonDoctors.CheckedChanged += new System.EventHandler(this.radioButtonDoctors_CheckedChanged);
+            this.radioButtonAppointment.AutoSize = true;
+            this.radioButtonAppointment.Location = new System.Drawing.Point(565, 42);
+            this.radioButtonAppointment.Name = "radioButtonAppointment";
+            this.radioButtonAppointment.Size = new System.Drawing.Size(149, 20);
+            this.radioButtonAppointment.TabIndex = 2;
+            this.radioButtonAppointment.TabStop = true;
+            this.radioButtonAppointment.Text = "All the Appointments";
+            this.radioButtonAppointment.UseVisualStyleBackColor = true;
+            this.radioButtonAppointment.CheckedChanged += new System.EventHandler(this.radioButtonAppointment_CheckedChanged);
             // 
             // radioButtonPatient
             // 
@@ -73,17 +73,17 @@
             this.radioButtonPatient.UseVisualStyleBackColor = true;
             this.radioButtonPatient.CheckedChanged += new System.EventHandler(this.radioButtonPatient_CheckedChanged);
             // 
-            // radioButtonAppointment
+            // radioButtonDoctors
             // 
-            this.radioButtonAppointment.AutoSize = true;
-            this.radioButtonAppointment.Location = new System.Drawing.Point(565, 42);
-            this.radioButtonAppointment.Name = "radioButtonAppointment";
-            this.radioButtonAppointment.Size = new System.Drawing.Size(149, 20);
-            this.radioButtonAppointment.TabIndex = 2;
-            this.radioButtonAppointment.TabStop = true;
-            this.radioButtonAppointment.Text = "All the Appointments";
-            this.radioButtonAppointment.UseVisualStyleBackColor = true;
-            this.radioButtonAppointment.CheckedChanged += new System.EventHandler(this.radioButtonAppointment_CheckedChanged);
+            this.radioButtonDoctors.AutoSize = true;
+            this.radioButtonDoctors.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonDoctors.Name = "radioButtonDoctors";
+            this.radioButtonDoctors.Size = new System.Drawing.Size(114, 20);
+            this.radioButtonDoctors.TabIndex = 0;
+            this.radioButtonDoctors.TabStop = true;
+            this.radioButtonDoctors.Text = "All the Doctors";
+            this.radioButtonDoctors.UseVisualStyleBackColor = true;
+            this.radioButtonDoctors.CheckedChanged += new System.EventHandler(this.radioButtonDoctors_CheckedChanged);
             // 
             // dataGridViewTables
             // 
@@ -97,6 +97,7 @@
             this.dataGridViewTables.RowTemplate.Height = 24;
             this.dataGridViewTables.Size = new System.Drawing.Size(743, 259);
             this.dataGridViewTables.TabIndex = 1;
+            this.dataGridViewTables.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTables_CellContentClick);
             // 
             // ShowAll
             // 
