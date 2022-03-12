@@ -35,9 +35,7 @@
             this.buttonAddDM = new System.Windows.Forms.Button();
             this.buttonSearchDM = new System.Windows.Forms.Button();
             this.buttonNewDM = new System.Windows.Forms.Button();
-            this.dateTimePickerHiringDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxSpecialtyDM = new System.Windows.Forms.TextBox();
-            this.textBoxTelephoneDM = new System.Windows.Forms.TextBox();
+            this.dateTimePickerHiringDateDM = new System.Windows.Forms.DateTimePicker();
             this.textBoxNameDM = new System.Windows.Forms.TextBox();
             this.textBoxCodeDM = new System.Windows.Forms.TextBox();
             this.labelSpecialty = new System.Windows.Forms.Label();
@@ -45,20 +43,22 @@
             this.labelTelephoneDM = new System.Windows.Forms.Label();
             this.labelNameDM = new System.Windows.Forms.Label();
             this.labelCodeDM = new System.Windows.Forms.Label();
+            this.maskedTextBoxTelephone = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxSpecialty = new System.Windows.Forms.ComboBox();
             this.groupBoxDM.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxDM
             // 
+            this.groupBoxDM.Controls.Add(this.comboBoxSpecialty);
+            this.groupBoxDM.Controls.Add(this.maskedTextBoxTelephone);
             this.groupBoxDM.Controls.Add(this.buttonExitDM);
             this.groupBoxDM.Controls.Add(this.buttonDeleteDM);
             this.groupBoxDM.Controls.Add(this.buttonEditDM);
             this.groupBoxDM.Controls.Add(this.buttonAddDM);
             this.groupBoxDM.Controls.Add(this.buttonSearchDM);
             this.groupBoxDM.Controls.Add(this.buttonNewDM);
-            this.groupBoxDM.Controls.Add(this.dateTimePickerHiringDate);
-            this.groupBoxDM.Controls.Add(this.textBoxSpecialtyDM);
-            this.groupBoxDM.Controls.Add(this.textBoxTelephoneDM);
+            this.groupBoxDM.Controls.Add(this.dateTimePickerHiringDateDM);
             this.groupBoxDM.Controls.Add(this.textBoxNameDM);
             this.groupBoxDM.Controls.Add(this.textBoxCodeDM);
             this.groupBoxDM.Controls.Add(this.labelSpecialty);
@@ -91,6 +91,7 @@
             this.buttonDeleteDM.TabIndex = 15;
             this.buttonDeleteDM.Text = "Delete";
             this.buttonDeleteDM.UseVisualStyleBackColor = true;
+            this.buttonDeleteDM.Click += new System.EventHandler(this.buttonDeleteDM_Click);
             // 
             // buttonEditDM
             // 
@@ -100,6 +101,7 @@
             this.buttonEditDM.TabIndex = 14;
             this.buttonEditDM.Text = "Edit";
             this.buttonEditDM.UseVisualStyleBackColor = true;
+            this.buttonEditDM.Click += new System.EventHandler(this.buttonEditDM_Click);
             // 
             // buttonAddDM
             // 
@@ -109,6 +111,7 @@
             this.buttonAddDM.TabIndex = 13;
             this.buttonAddDM.Text = "Add";
             this.buttonAddDM.UseVisualStyleBackColor = true;
+            this.buttonAddDM.Click += new System.EventHandler(this.buttonAddDM_Click);
             // 
             // buttonSearchDM
             // 
@@ -130,26 +133,12 @@
             this.buttonNewDM.UseVisualStyleBackColor = true;
             this.buttonNewDM.Click += new System.EventHandler(this.buttonNewDM_Click);
             // 
-            // dateTimePickerHiringDate
+            // dateTimePickerHiringDateDM
             // 
-            this.dateTimePickerHiringDate.Location = new System.Drawing.Point(203, 244);
-            this.dateTimePickerHiringDate.Name = "dateTimePickerHiringDate";
-            this.dateTimePickerHiringDate.Size = new System.Drawing.Size(243, 26);
-            this.dateTimePickerHiringDate.TabIndex = 10;
-            // 
-            // textBoxSpecialtyDM
-            // 
-            this.textBoxSpecialtyDM.Location = new System.Drawing.Point(203, 303);
-            this.textBoxSpecialtyDM.Name = "textBoxSpecialtyDM";
-            this.textBoxSpecialtyDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxSpecialtyDM.TabIndex = 9;
-            // 
-            // textBoxTelephoneDM
-            // 
-            this.textBoxTelephoneDM.Location = new System.Drawing.Point(203, 181);
-            this.textBoxTelephoneDM.Name = "textBoxTelephoneDM";
-            this.textBoxTelephoneDM.Size = new System.Drawing.Size(243, 26);
-            this.textBoxTelephoneDM.TabIndex = 7;
+            this.dateTimePickerHiringDateDM.Location = new System.Drawing.Point(203, 244);
+            this.dateTimePickerHiringDateDM.Name = "dateTimePickerHiringDateDM";
+            this.dateTimePickerHiringDateDM.Size = new System.Drawing.Size(243, 26);
+            this.dateTimePickerHiringDateDM.TabIndex = 10;
             // 
             // textBoxNameDM
             // 
@@ -210,6 +199,23 @@
             this.labelCodeDM.TabIndex = 0;
             this.labelCodeDM.Text = "Code";
             // 
+            // maskedTextBoxTelephone
+            // 
+            this.maskedTextBoxTelephone.Location = new System.Drawing.Point(203, 178);
+            this.maskedTextBoxTelephone.Mask = "00 00 00 00 00 00";
+            this.maskedTextBoxTelephone.Name = "maskedTextBoxTelephone";
+            this.maskedTextBoxTelephone.Size = new System.Drawing.Size(243, 26);
+            this.maskedTextBoxTelephone.TabIndex = 17;
+            this.maskedTextBoxTelephone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxTelephone_MaskInputRejected);
+            // 
+            // comboBoxSpecialty
+            // 
+            this.comboBoxSpecialty.FormattingEnabled = true;
+            this.comboBoxSpecialty.Location = new System.Drawing.Point(203, 303);
+            this.comboBoxSpecialty.Name = "comboBoxSpecialty";
+            this.comboBoxSpecialty.Size = new System.Drawing.Size(243, 28);
+            this.comboBoxSpecialty.TabIndex = 18;
+            // 
             // DoctorManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -232,8 +238,6 @@
         private System.Windows.Forms.Label labelTelephoneDM;
         private System.Windows.Forms.Label labelNameDM;
         private System.Windows.Forms.Label labelCodeDM;
-        private System.Windows.Forms.TextBox textBoxSpecialtyDM;
-        private System.Windows.Forms.TextBox textBoxTelephoneDM;
         private System.Windows.Forms.TextBox textBoxNameDM;
         private System.Windows.Forms.TextBox textBoxCodeDM;
         private System.Windows.Forms.Button buttonExitDM;
@@ -242,6 +246,8 @@
         private System.Windows.Forms.Button buttonAddDM;
         private System.Windows.Forms.Button buttonSearchDM;
         private System.Windows.Forms.Button buttonNewDM;
-        private System.Windows.Forms.DateTimePicker dateTimePickerHiringDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerHiringDateDM;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelephone;
+        private System.Windows.Forms.ComboBox comboBoxSpecialty;
     }
 }

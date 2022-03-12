@@ -105,6 +105,12 @@
     <Compile Include="ShowAll.Designer.cs">
       <DependentUpon>ShowAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowPatientAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowPatientAppointments.Designer.cs">
+      <DependentUpon>ShowPatientAppointments.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DoctorManagementForm.resx">
       <DependentUpon>DoctorManagementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowAll.resx">
       <DependentUpon>ShowAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowPatientAppointments.resx">
+      <DependentUpon>ShowPatientAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

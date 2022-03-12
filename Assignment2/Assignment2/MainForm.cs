@@ -56,5 +56,11 @@ namespace Assignment2
             SearchAppointment formSearchAppointment = new SearchAppointment();
             formSearchAppointment.Show();
         }
+
+        private void showAPatientsAppointmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowPatientAppointments formShowPatientAppointments = new ShowPatientAppointments();
+            formShowPatientAppointments.Show();
+        }
     }
 }
