@@ -62,5 +62,10 @@ namespace Assignment2
             ShowPatientAppointments formShowPatientAppointments = new ShowPatientAppointments();
             formShowPatientAppointments.Show();
         }
+
+        private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

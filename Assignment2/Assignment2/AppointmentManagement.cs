@@ -55,18 +55,25 @@ namespace Assignment2
         {
             Appointments newAppointment;
             newAppointment = new Appointments();
-            if (Int32.TryParse(comboBoxDoctorCode.Text, out int codeDoctor) && Int32.TryParse(comboBoxPatientCode.Text, out int codePatient))
+            try
             {
-                newAppointment.DoctorId = codeDoctor;
-                newAppointment.PatientId = codePatient;
+                if (Int32.TryParse(comboBoxDoctorCode.Text, out int codeDoctor) && Int32.TryParse(comboBoxPatientCode.Text, out int codePatient))
+                {
+                    newAppointment.DoctorId = codeDoctor;
+                    newAppointment.PatientId = codePatient;
+                }
+                else
+                {
+                    MessageBox.Show("The value in Patient Code or Doctor code is not a number. ");
+                    return;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("The value in Patient Code or Doctor code is not a number. ");
-                return;
+                Console.WriteLine(ex.Message);
             }
 
-            if(dateTimePicker1.Value < DateTime.Today)
+            if (dateTimePicker1.Value < DateTime.Today)
             {
                 MessageBox.Show("The selected date is not today or futur day.");
                 return;
@@ -76,15 +83,22 @@ namespace Assignment2
                 newAppointment.AppointmentDate = dateTimePicker1.Value;
             }
 
-            TimeSpan timeAppointment;
-            if (TimeSpan.TryParse(maskedTextBoxAppointmentTime.Text, out timeAppointment))
+            try
             {
-                newAppointment.AppointmentTime = timeAppointment;
+                TimeSpan timeAppointment;
+                if (TimeSpan.TryParse(maskedTextBoxAppointmentTime.Text, out timeAppointment))
+                {
+                    newAppointment.AppointmentTime = timeAppointment;
+                }
+                else
+                {
+                    MessageBox.Show("Time is not valid");
+                    return;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Time is not valid");
-                return;
+                Console.WriteLine(ex.Message);
             }
 
             try

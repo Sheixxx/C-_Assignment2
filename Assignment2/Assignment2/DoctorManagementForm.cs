@@ -24,24 +24,40 @@ namespace Assignment2
 
         public bool inDataBase(int toTest)
         {
-            if (db.Doctor.Any(t => t.DoctorId == toTest))
-            {
-                return true;
+            try
+            { 
+                if (db.Doctor.Any(t => t.DoctorId == toTest))
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         private void buttonNewDM_Click(object sender, EventArgs e)
         {
-            textBoxCodeDM.Clear();
-            textBoxNameDM.Clear();
-            comboBoxSpecialty.SelectedIndex = 0;
-            //textBoxTelephoneDM.Clear();
-            maskedTextBoxTelephone.Clear();
-            dateTimePickerHiringDateDM.Value = DateTime.Now;
-            var specialty = (from x in db.Doctor select x.DoctorSpecialism).Distinct();
-            comboBoxSpecialty.DataSource = specialty;
-        }
+            try
+            {
+                textBoxCodeDM.Clear();
+                textBoxNameDM.Clear();
+                comboBoxSpecialty.SelectedIndex = 0;
+
+                maskedTextBoxTelephone.Clear();
+                dateTimePickerHiringDateDM.Value = DateTime.Now;
+
+                var specialty = (from x in db.Doctor select x.DoctorSpecialism).Distinct();
+                comboBoxSpecialty.DataSource = specialty;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+}
 
         private void buttonSearchDM_Click(object sender, EventArgs e)
         {
@@ -83,33 +99,41 @@ namespace Assignment2
             }
             else
             {
-                // Check that the input value are correct
-                if (int.TryParse(textBoxCodeDM.Text, out var))
+                
+
+                try
                 {
-                    doctor.DoctorId = var;
+                    // Check that the input value are correct
+                    if (int.TryParse(textBoxCodeDM.Text, out var))
+                    {
+                        doctor.DoctorId = var;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Code Format is Invalid");
+                    }
+
+                    if (int.TryParse(maskedTextBoxTelephone.Text.Replace(" ", ""), out var))
+                    {
+                        doctor.DoctorTel = var;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Telephone Format is Invalid");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Code Format is Invalid");
+                    Console.WriteLine(ex.Message);
                 }
-                if (int.TryParse(maskedTextBoxTelephone.Text.Replace(" ", ""), out var))
-                {
-                    doctor.DoctorTel = var;
-                }
-                else
-                {
-                    MessageBox.Show("Telephone Format is Invalid");
-                }
+
                 doctor.DoctorName = textBoxNameDM.Text;
                 doctor.DoctorSpecialism = comboBoxSpecialty.Text;
                 doctor.HiringDate = dateTimePickerHiringDateDM.Value;
 
-
-                db.Doctor.InsertOnSubmit(doctor);
-
                 try
                 {
-
+                    db.Doctor.InsertOnSubmit(doctor);
                     db.SubmitChanges();
                     buttonNewDM_Click(sender,e);
                 }
@@ -144,24 +168,38 @@ namespace Assignment2
             }
             else
             {
-                doctor = db.Doctor.First(originDoctor => originDoctor.DoctorId.Equals(Convert.ToInt32(textBoxCodeDM.Text)));
-                // Check that the input value are correct
-                if (int.TryParse(textBoxCodeDM.Text, out var))
+                try
                 {
-                    doctor.DoctorId = var;
+                    doctor = db.Doctor.First(originDoctor => originDoctor.DoctorId.Equals(Convert.ToInt32(textBoxCodeDM.Text)));
+                    // Check that the input value are correct
+                    if (int.TryParse(textBoxCodeDM.Text, out var))
+                    {
+                        doctor.DoctorId = var;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Code Format is Invalid");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Code Format is Invalid");
-                    
+                    Console.WriteLine(ex.Message);
                 }
-                if (Int32.TryParse(maskedTextBoxTelephone.Text.Replace(" ", ""), out var))
+
+                try
                 {
-                    doctor.DoctorTel = var;
+                    if (Int32.TryParse(maskedTextBoxTelephone.Text.Replace(" ", ""), out var))
+                    {
+                        doctor.DoctorTel = var;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Telephone Format is Invalid");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Telephone Format is Invalid");
+                    Console.WriteLine(ex.Message);
                 }
                 doctor.DoctorName = textBoxNameDM.Text;
                 doctor.DoctorSpecialism = comboBoxSpecialty.Text;
@@ -196,10 +234,11 @@ namespace Assignment2
             if (answer == DialogResult.OK)
             {
                 Doctor doctor = new Doctor();
-                doctor = db.Doctor.First(originDoctor => originDoctor.DoctorId.Equals(Convert.ToInt32(textBoxCodeDM.Text)));
-                db.Doctor.DeleteOnSubmit(doctor);
+                
                 try
                 {
+                    doctor = db.Doctor.First(originDoctor => originDoctor.DoctorId.Equals(Convert.ToInt32(textBoxCodeDM.Text)));
+                    db.Doctor.DeleteOnSubmit(doctor);
                     db.SubmitChanges();
                     var specialty = (from x in db.Doctor select x.DoctorSpecialism).Distinct();
                     comboBoxSpecialty.DataSource = specialty;
@@ -239,6 +278,11 @@ namespace Assignment2
             {
                 MessageBox.Show("Exception Message: " + ex.Message);
             }
+        }
+
+        private void textBoxCodeDM_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

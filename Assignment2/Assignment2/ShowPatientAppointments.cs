@@ -20,58 +20,64 @@ namespace Assignment2
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            int value = 0;
-            if (int.TryParse(textBoxPatientCode.Text, out value))
+            try
             {
-                var info = (from x in db.Appointments where (x.PatientId == value) select x).ToList();
-                dataGridViewPA.DataSource = info;
+                int value = 0;
+                if (int.TryParse(textBoxPatientCode.Text, out value))
+                {
+                    var info = (from x in db.Appointments where (x.PatientId == value) select x).ToList();
+                    dataGridViewPA.DataSource = info;
 
-                var patientInfo = db.Patient.First(x => x.PatientId.Equals(textBoxPatientCode.Text));
+                    var patientInfo = db.Patient.First(x => x.PatientId.Equals(textBoxPatientCode.Text));
 
-                textBoxName.Text = patientInfo.PatientName.Trim();
-                dateTimePickerBirthDate.Value = patientInfo.BirthDate.Value;
-                textBoxAddress.Text = patientInfo.PatientAddress;
+                    textBoxName.Text = patientInfo.PatientName.Trim();
+                    dateTimePickerBirthDate.Value = patientInfo.BirthDate.Value;
+                    textBoxAddress.Text = patientInfo.PatientAddress;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid Patient Code");
+                }
             }
-            else
-            {
-                MessageBox.Show("Please enter a valid Patient Code");
+            catch (Exception ex)
+            { 
+                Console.WriteLine(ex.Message); 
             }
-            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            textBoxPatientCode.Clear();
-
-            textBoxName.Clear();
-            textBoxAddress.Clear();
-            dateTimePickerBirthDate.Value = DateTime.Now;
-
-            textBoxACode.Clear();
-            dateTimePickerADate.Value = DateTime.Now;
-            maskedTextBoxDCode.Text = "00:00";
             try
             {
+                textBoxPatientCode.Clear();
+                textBoxName.Clear();
+                textBoxAddress.Clear();
+                textBoxACode.Clear();
+                maskedTextBoxDCode.Text = "00:00";
+
+                dateTimePickerBirthDate.Value = DateTime.Now;
+                dateTimePickerADate.Value = DateTime.Now;
+                
                 comboBoxDCode.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
             }
             
         }
 
         private void dataGridViewPA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 3)
-            {
-                DoctorManagementForm doctorForm = new DoctorManagementForm();
-                doctorForm.setDoctorId(Int32.Parse(dataGridViewPA.CurrentCell.Value.ToString()));
-                doctorForm.ShowDialog();
-               
-            }
             try
             {
+                if (e.ColumnIndex == 3)
+                {
+                    DoctorManagementForm doctorForm = new DoctorManagementForm();
+                    doctorForm.setDoctorId(Int32.Parse(dataGridViewPA.CurrentCell.Value.ToString()));
+                    doctorForm.ShowDialog();
+
+                }
                 var docteurId = from x in db.Doctor select x.DoctorId;
                 comboBoxDCode.DataSource = docteurId;
 
@@ -99,38 +105,36 @@ namespace Assignment2
                 MessageBox.Show(ex.Message);
             }
 
-            if (Int32.TryParse(comboBoxDCode.Text, out int codeDoctor) 
-                && Int32.TryParse(textBoxPatientCode.Text, out int codePatient)
-                && Int32.TryParse(textBoxACode.Text, out int codeAppointment))
-            {
-                newAppointment.DoctorId = codeDoctor;
-                newAppointment.PatientId = codePatient;
-                newAppointment.AppointmentCode = codeAppointment;
-
-                
-            }
-            else
-            {
-                MessageBox.Show("The value in Patient Code or Doctor code is not a number. ");
-                return;
-            }
-
-            newAppointment.AppointmentDate = dateTimePickerADate.Value;
             
-
-            TimeSpan timeAppointment;
-            if (TimeSpan.TryParse(maskedTextBoxDCode.Text, out timeAppointment))
-            {
-                newAppointment.AppointmentTime = timeAppointment;
-            }
-            else
-            {
-                MessageBox.Show("Time is not valid");
-                return;
-            }
-
+            
             try
             {
+                if (Int32.TryParse(comboBoxDCode.Text, out int codeDoctor) 
+                    && Int32.TryParse(textBoxPatientCode.Text, out int codePatient)
+                    && Int32.TryParse(textBoxACode.Text, out int codeAppointment))
+                {
+                    newAppointment.DoctorId = codeDoctor;
+                    newAppointment.PatientId = codePatient;
+                    newAppointment.AppointmentCode = codeAppointment;
+
+                }
+                else
+                {
+                    MessageBox.Show("The value in Patient Code or Doctor code is not a number. ");
+                    return;
+                }
+
+                newAppointment.AppointmentDate = dateTimePickerADate.Value;
+                TimeSpan timeAppointment;
+                if (TimeSpan.TryParse(maskedTextBoxDCode.Text, out timeAppointment))
+                {
+                    newAppointment.AppointmentTime = timeAppointment;
+                }
+                else
+                {
+                    MessageBox.Show("Time is not valid");
+                    return;
+                }
                 db.SubmitChanges();
                 MessageBox.Show("New Appointment updated to the bdd");
             }
@@ -167,6 +171,16 @@ namespace Assignment2
                 MessageBox.Show("Delete Cancel");
             }
             buttonSearch_Click(sender, e);
+        }
+
+        private void textBoxPatientCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

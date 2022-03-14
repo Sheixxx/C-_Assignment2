@@ -16,7 +16,6 @@ namespace Assignment2
         public SearchAppointment()
         {
             InitializeComponent();
-            //dateTimePickerSelection.CustomFormat = "dd MMMM yyyy";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -26,7 +25,6 @@ namespace Assignment2
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-
             try
             {
                 var dataAppointment = (from x in db.Appointments
@@ -46,9 +44,6 @@ namespace Assignment2
                 Console.WriteLine(error.Message);
                 return;
             }
-
-
-            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -65,12 +60,12 @@ namespace Assignment2
         {
             if(e.RowIndex != -1)
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                var doctorId = selectedRow.Cells[2].Value;
-                var patientId = selectedRow.Cells[3].Value;
-
                 try
                 {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                    var doctorId = selectedRow.Cells[2].Value;
+                    var patientId = selectedRow.Cells[3].Value;
+
                     var dataDoctor = db.Doctor.First(x => x.DoctorId.Equals(doctorId));
                     textBoxDoctorName.Text = dataDoctor.DoctorName.Trim();
                     textBoxDoctorSpeciality.Text = dataDoctor.DoctorSpecialism.Trim();
@@ -85,6 +80,11 @@ namespace Assignment2
                     return;
                 }
             }
+        }
+
+        private void textBoxDoctorName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

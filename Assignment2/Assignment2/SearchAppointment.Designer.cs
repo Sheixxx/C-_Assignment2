@@ -117,6 +117,7 @@
             this.textBoxDoctorName.ReadOnly = true;
             this.textBoxDoctorName.Size = new System.Drawing.Size(100, 22);
             this.textBoxDoctorName.TabIndex = 4;
+            this.textBoxDoctorName.TextChanged += new System.EventHandler(this.textBoxDoctorName_TextChanged);
             // 
             // labelDoctorSpeciality
             // 

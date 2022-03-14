@@ -21,22 +21,43 @@ namespace Assignment2
 
         private void radioButtonDoctors_CheckedChanged(object sender, EventArgs e)
         {
-            var info = (from x in db.Doctor select x).ToList();
-            dataGridViewTables.DataSource = info;
+            try
+            {
+                var info = (from x in db.Doctor select x).ToList();
+                dataGridViewTables.DataSource = info;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void radioButtonPatient_CheckedChanged(object sender, EventArgs e)
         {
-            var info = (from x in db.Patient select x).ToList();
-            dataGridViewTables.DataSource = info;
+            try
+            {
+                var info = (from x in db.Patient select x).ToList();
+                dataGridViewTables.DataSource = info;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void radioButtonAppointment_CheckedChanged(object sender, EventArgs e)
         {
-            var info = (from x in db.Appointments select x).ToList();
-            dataGridViewTables.DataSource = info;
+            try
+            {
+                var info = (from x in db.Appointments select x).ToList();
+                dataGridViewTables.DataSource = info;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
-
         private void dataGridViewTables_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

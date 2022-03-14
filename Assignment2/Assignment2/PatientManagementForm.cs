@@ -15,11 +15,19 @@ namespace Assignment2
 
         public bool inDataBase (int toTest)
         {
-            if (db.Patient.Any(t => t.PatientId == toTest))
-            {
-                return true;
+            try
+            { 
+                if (db.Patient.Any(t => t.PatientId == toTest))
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         public void resetData()
@@ -46,32 +54,39 @@ namespace Assignment2
                 MessageBox.Show("Please fill in a code");
             } else
             {
-                patientCode = Convert.ToInt32(textBoxCodePM.Text);
+                try
+                { 
+                    patientCode = Convert.ToInt32(textBoxCodePM.Text);
 
-                if (!inDataBase(patientCode)){
-                    /*throw new ArgumentException("L'identifiant ne correspond à aucun patient");*/
-                    MessageBox.Show("L'identifiant ne correspond à aucun patient");
+                    if (!inDataBase(patientCode)){
+                        /*throw new ArgumentException("L'identifiant ne correspond à aucun patient");*/
+                        MessageBox.Show("L'identifiant ne correspond à aucun patient");
+                    }
+                    else
+                    {
+                        var patientInfo = db.Patient.First(x => x.PatientId.Equals(patientCode));
+
+                        textBoxNamePM.Text = patientInfo.PatientName.Trim();
+
+                        dateTimePickerBirthDatePM.Value = patientInfo.BirthDate.Value;
+
+                        textBoxAddressPM.Text = patientInfo.PatientAddress.Trim();
+
+                        if (patientInfo.PatientGender.Trim() == "M")
+                        {
+                            radioButtonMasculinePM.Checked = true;
+                        }
+                        else if (patientInfo.PatientGender.Trim() == "F")
+                        {
+                            radioButtonFemininePM.Checked = true;
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    var patientInfo = db.Patient.First(x => x.PatientId.Equals(patientCode));
-
-                    textBoxNamePM.Text = patientInfo.PatientName.Trim();
-
-                    dateTimePickerBirthDatePM.Value = patientInfo.BirthDate.Value;
-
-                    textBoxAddressPM.Text = patientInfo.PatientAddress.Trim();
-
-                    if (patientInfo.PatientGender.Trim() == "M")
-                    {
-                        radioButtonMasculinePM.Checked = true;
-                    }
-                    else if (patientInfo.PatientGender.Trim() == "F")
-                    {
-                        radioButtonFemininePM.Checked = true;
-                    }
+                    Console.WriteLine(ex.Message);
                 }
-                
+
 
             }
 
@@ -91,27 +106,25 @@ namespace Assignment2
             }
             else
             {
-                
-                newPatient = new Patient();
-                newPatient.PatientId = Convert.ToInt32(textBoxCodePM.Text);
-                newPatient.PatientName = textBoxNamePM.Text;
-                newPatient.BirthDate = dateTimePickerBirthDatePM.Value;
-                newPatient.PatientAddress = textBoxAddressPM.Text;
-                string gender = "";
-                if (radioButtonMasculinePM.Checked == true)
-                {
-                    gender = "M";
-                }
-                else if (radioButtonFemininePM.Checked == true)
-                {
-                    gender = "F";
-                }
-                newPatient.PatientGender = gender;
-
-                db.Patient.InsertOnSubmit(newPatient);
-
                 try
                 {
+                    newPatient = new Patient();
+                    newPatient.PatientId = Convert.ToInt32(textBoxCodePM.Text);
+                    newPatient.PatientName = textBoxNamePM.Text;
+                    newPatient.BirthDate = dateTimePickerBirthDatePM.Value;
+                    newPatient.PatientAddress = textBoxAddressPM.Text;
+                    string gender = "";
+                    if (radioButtonMasculinePM.Checked == true)
+                    {
+                        gender = "M";
+                    }
+                    else if (radioButtonFemininePM.Checked == true)
+                    {
+                        gender = "F";
+                    }
+                    newPatient.PatientGender = gender;
+
+                    db.Patient.InsertOnSubmit(newPatient);
                     db.SubmitChanges();
                     MessageBox.Show("New Patient added to the DB !");
                     resetData();
@@ -140,23 +153,24 @@ namespace Assignment2
                 DialogResult answer = MessageBox.Show("This patient will be edided from the database ! ", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (answer == DialogResult.OK)
                 {
-                    actualPatient = db.Patient.First(patient => patient.PatientId.Equals(Convert.ToInt32(textBoxCodePM.Text)));
-                    actualPatient.PatientName = textBoxNamePM.Text;
-                    actualPatient.BirthDate = dateTimePickerBirthDatePM.Value;
-                    actualPatient.PatientAddress = textBoxAddressPM.Text;
-                    string gender = "";
-                    if (radioButtonMasculinePM.Checked == true)
-                    {
-                        gender = "M";
-                    }
-                    else if (radioButtonFemininePM.Checked == true)
-                    {
-                        gender = "F";
-                    }
-                    actualPatient.PatientGender = gender;
+                    
 
                     try
-                    {
+                    {   
+                        actualPatient = db.Patient.First(patient => patient.PatientId.Equals(Convert.ToInt32(textBoxCodePM.Text)));
+                        actualPatient.PatientName = textBoxNamePM.Text;
+                        actualPatient.BirthDate = dateTimePickerBirthDatePM.Value;
+                        actualPatient.PatientAddress = textBoxAddressPM.Text;
+                        string gender = "";
+                        if (radioButtonMasculinePM.Checked == true)
+                        {
+                            gender = "M";
+                        }
+                        else if (radioButtonFemininePM.Checked == true)
+                        {
+                            gender = "F";
+                        }
+                        actualPatient.PatientGender = gender;
                         db.SubmitChanges();
                         MessageBox.Show("The patient has been well edited !");
                         resetData();
@@ -183,10 +197,11 @@ namespace Assignment2
                 DialogResult answer = MessageBox.Show("This patient will be deleted from the database ! ", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (answer == DialogResult.OK)
                 {
-                    actualPatient = db.Patient.First(patient => patient.PatientId.Equals(Convert.ToInt32(textBoxCodePM.Text)));
-                    db.Patient.DeleteOnSubmit(actualPatient);
+                    
                     try
                     {
+                        actualPatient = db.Patient.First(patient => patient.PatientId.Equals(Convert.ToInt32(textBoxCodePM.Text)));
+                        db.Patient.DeleteOnSubmit(actualPatient);
                         db.SubmitChanges();
                         MessageBox.Show("The patient has been well deleted !");
                         resetData();
@@ -208,6 +223,16 @@ namespace Assignment2
             {
                 this.Close();
             }
+        }
+
+        private void textBoxCodePM_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNamePM_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

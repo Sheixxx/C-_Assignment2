@@ -188,6 +188,7 @@
             this.textBoxNamePM.Name = "textBoxNamePM";
             this.textBoxNamePM.Size = new System.Drawing.Size(200, 22);
             this.textBoxNamePM.TabIndex = 6;
+            this.textBoxNamePM.TextChanged += new System.EventHandler(this.textBoxNamePM_TextChanged);
             // 
             // textBoxCodePM
             // 
@@ -195,6 +196,7 @@
             this.textBoxCodePM.Name = "textBoxCodePM";
             this.textBoxCodePM.Size = new System.Drawing.Size(200, 22);
             this.textBoxCodePM.TabIndex = 5;
+            this.textBoxCodePM.TextChanged += new System.EventHandler(this.textBoxCodePM_TextChanged);
             // 
             // labelGenderPM
             // 
