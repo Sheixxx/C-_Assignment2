@@ -64,6 +64,7 @@
             this.managementSystemToolStripMenuItem.Name = "managementSystemToolStripMenuItem";
             this.managementSystemToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.managementSystemToolStripMenuItem.Text = "Management System";
+            this.managementSystemToolStripMenuItem.Click += new System.EventHandler(this.managementSystemToolStripMenuItem_Click);
             // 
             // doctorManagementToolStripMenuItem
             // 

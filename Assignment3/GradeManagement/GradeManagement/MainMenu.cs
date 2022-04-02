@@ -21,5 +21,17 @@ namespace GradeManagement
         {
             Close();
         }
+
+        private void studentsManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentManagerForm studentManagerForm = new StudentManagerForm();
+            studentManagerForm.ShowDialog();
+        }
+
+        private void gradesManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GradesManagementForm gradesManagementForm = new GradesManagementForm();
+            gradesManagementForm.ShowDialog();
+        }
     }
 }

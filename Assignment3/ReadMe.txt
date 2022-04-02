@@ -1,0 +1,1 @@
+Data_Access changer : @"Data Source=[VOTRE LIEN DANS SQL MANAGER];Initial Catalog=GradesManagement;Integrated Security=True"

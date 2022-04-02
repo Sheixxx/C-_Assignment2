@@ -28,6 +28,7 @@ namespace Data_Access_Layer
         {
             conn.ConnectionString = @"Data Source=ZENSHEIX\SQLEXPRESS;Initial Catalog=GradesManagement;Integrated Security=True";
             conn.Open();
+            Console.WriteLine(conn.State.ToString());
         }
 
         public void unLink()
@@ -41,6 +42,20 @@ namespace Data_Access_Layer
             dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+
+        public void modification(string strsql)
+        {
+            try
+            {
+                cmd.CommandText = strsql;
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
     }
 }

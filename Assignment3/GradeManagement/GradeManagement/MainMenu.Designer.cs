@@ -64,12 +64,14 @@
             this.studentsManagementToolStripMenuItem.Name = "studentsManagementToolStripMenuItem";
             this.studentsManagementToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.studentsManagementToolStripMenuItem.Text = "Students Management";
+            this.studentsManagementToolStripMenuItem.Click += new System.EventHandler(this.studentsManagementToolStripMenuItem_Click);
             // 
             // gradesManagementToolStripMenuItem
             // 
             this.gradesManagementToolStripMenuItem.Name = "gradesManagementToolStripMenuItem";
             this.gradesManagementToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.gradesManagementToolStripMenuItem.Text = "Grades Management";
+            this.gradesManagementToolStripMenuItem.Click += new System.EventHandler(this.gradesManagementToolStripMenuItem_Click);
             // 
             // consultationToolStripMenuItem
             // 

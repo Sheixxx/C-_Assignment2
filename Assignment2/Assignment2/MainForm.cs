@@ -67,5 +67,10 @@ namespace Assignment2
         {
 
         }
+
+        private void managementSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

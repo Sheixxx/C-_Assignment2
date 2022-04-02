@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelId = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelFamily = new System.Windows.Forms.Label();
-            this.labelBirthDate = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxFamily = new System.Windows.Forms.TextBox();
             this.dateTimePickerBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxFamily = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.labelBirthDate = new System.Windows.Forms.Label();
+            this.labelFamily = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelId = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.buttonPredPred = new System.Windows.Forms.Button();
-            this.buttonPred = new System.Windows.Forms.Button();
-            this.buttonSuiv = new System.Windows.Forms.Button();
-            this.buttonSuivSuiv = new System.Windows.Forms.Button();
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonModify = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonSuivSuiv = new System.Windows.Forms.Button();
+            this.buttonSuiv = new System.Windows.Forms.Button();
+            this.buttonPred = new System.Windows.Forms.Button();
+            this.buttonPredPred = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,34 +69,35 @@
             this.groupBox1.Size = new System.Drawing.Size(557, 308);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Info";
             // 
-            // labelId
+            // dateTimePickerBirthDate
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(59, 55);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(20, 16);
-            this.labelId.TabIndex = 0;
-            this.labelId.Text = "ID";
+            this.dateTimePickerBirthDate.Location = new System.Drawing.Point(239, 238);
+            this.dateTimePickerBirthDate.Name = "dateTimePickerBirthDate";
+            this.dateTimePickerBirthDate.Size = new System.Drawing.Size(231, 22);
+            this.dateTimePickerBirthDate.TabIndex = 7;
             // 
-            // labelName
+            // textBoxFamily
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(59, 115);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(44, 16);
-            this.labelName.TabIndex = 1;
-            this.labelName.Text = "Name";
+            this.textBoxFamily.Location = new System.Drawing.Point(239, 171);
+            this.textBoxFamily.Name = "textBoxFamily";
+            this.textBoxFamily.Size = new System.Drawing.Size(231, 22);
+            this.textBoxFamily.TabIndex = 6;
             // 
-            // labelFamily
+            // textBoxName
             // 
-            this.labelFamily.AutoSize = true;
-            this.labelFamily.Location = new System.Drawing.Point(59, 177);
-            this.labelFamily.Name = "labelFamily";
-            this.labelFamily.Size = new System.Drawing.Size(47, 16);
-            this.labelFamily.TabIndex = 2;
-            this.labelFamily.Text = "Family";
+            this.textBoxName.Location = new System.Drawing.Point(239, 112);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(231, 22);
+            this.textBoxName.TabIndex = 5;
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(239, 49);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(231, 22);
+            this.textBoxID.TabIndex = 4;
             // 
             // labelBirthDate
             // 
@@ -107,33 +108,32 @@
             this.labelBirthDate.TabIndex = 3;
             this.labelBirthDate.Text = "Birth Date";
             // 
-            // textBoxID
+            // labelFamily
             // 
-            this.textBoxID.Location = new System.Drawing.Point(239, 49);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(200, 22);
-            this.textBoxID.TabIndex = 4;
+            this.labelFamily.AutoSize = true;
+            this.labelFamily.Location = new System.Drawing.Point(59, 177);
+            this.labelFamily.Name = "labelFamily";
+            this.labelFamily.Size = new System.Drawing.Size(47, 16);
+            this.labelFamily.TabIndex = 2;
+            this.labelFamily.Text = "Family";
             // 
-            // textBoxName
+            // labelName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(239, 112);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(200, 22);
-            this.textBoxName.TabIndex = 5;
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(59, 115);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(44, 16);
+            this.labelName.TabIndex = 1;
+            this.labelName.Text = "Name";
             // 
-            // textBoxFamily
+            // labelId
             // 
-            this.textBoxFamily.Location = new System.Drawing.Point(239, 171);
-            this.textBoxFamily.Name = "textBoxFamily";
-            this.textBoxFamily.Size = new System.Drawing.Size(200, 22);
-            this.textBoxFamily.TabIndex = 6;
-            // 
-            // dateTimePickerBirthDate
-            // 
-            this.dateTimePickerBirthDate.Location = new System.Drawing.Point(239, 238);
-            this.dateTimePickerBirthDate.Name = "dateTimePickerBirthDate";
-            this.dateTimePickerBirthDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerBirthDate.TabIndex = 7;
+            this.labelId.AutoSize = true;
+            this.labelId.Location = new System.Drawing.Point(59, 55);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(20, 16);
+            this.labelId.TabIndex = 0;
+            this.labelId.Text = "ID";
             // 
             // groupBox2
             // 
@@ -148,7 +148,63 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 308);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(24, 231);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(152, 36);
+            this.buttonExit.TabIndex = 9;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(24, 189);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(152, 36);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
+            // buttonModify
+            // 
+            this.buttonModify.Location = new System.Drawing.Point(24, 147);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(152, 36);
+            this.buttonModify.TabIndex = 7;
+            this.buttonModify.Text = "Modify";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(24, 105);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(152, 36);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(24, 63);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(152, 36);
+            this.buttonSearch.TabIndex = 5;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.Location = new System.Drawing.Point(24, 21);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(152, 36);
+            this.buttonNew.TabIndex = 4;
+            this.buttonNew.Text = "New";
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // groupBox3
             // 
@@ -161,34 +217,6 @@
             this.groupBox3.Size = new System.Drawing.Size(776, 112);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // buttonPredPred
-            // 
-            this.buttonPredPred.Location = new System.Drawing.Point(26, 30);
-            this.buttonPredPred.Name = "buttonPredPred";
-            this.buttonPredPred.Size = new System.Drawing.Size(152, 58);
-            this.buttonPredPred.TabIndex = 0;
-            this.buttonPredPred.Text = "<<";
-            this.buttonPredPred.UseVisualStyleBackColor = true;
-            // 
-            // buttonPred
-            // 
-            this.buttonPred.Location = new System.Drawing.Point(212, 30);
-            this.buttonPred.Name = "buttonPred";
-            this.buttonPred.Size = new System.Drawing.Size(152, 58);
-            this.buttonPred.TabIndex = 1;
-            this.buttonPred.Text = "<";
-            this.buttonPred.UseVisualStyleBackColor = true;
-            // 
-            // buttonSuiv
-            // 
-            this.buttonSuiv.Location = new System.Drawing.Point(405, 30);
-            this.buttonSuiv.Name = "buttonSuiv";
-            this.buttonSuiv.Size = new System.Drawing.Size(152, 58);
-            this.buttonSuiv.TabIndex = 2;
-            this.buttonSuiv.Text = ">";
-            this.buttonSuiv.UseVisualStyleBackColor = true;
             // 
             // buttonSuivSuiv
             // 
@@ -199,59 +227,32 @@
             this.buttonSuivSuiv.Text = ">>";
             this.buttonSuivSuiv.UseVisualStyleBackColor = true;
             // 
-            // buttonNew
+            // buttonSuiv
             // 
-            this.buttonNew.Location = new System.Drawing.Point(24, 21);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(152, 36);
-            this.buttonNew.TabIndex = 4;
-            this.buttonNew.Text = "New";
-            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonSuiv.Location = new System.Drawing.Point(405, 30);
+            this.buttonSuiv.Name = "buttonSuiv";
+            this.buttonSuiv.Size = new System.Drawing.Size(152, 58);
+            this.buttonSuiv.TabIndex = 2;
+            this.buttonSuiv.Text = ">";
+            this.buttonSuiv.UseVisualStyleBackColor = true;
             // 
-            // buttonSearch
+            // buttonPred
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(24, 63);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(152, 36);
-            this.buttonSearch.TabIndex = 5;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonPred.Location = new System.Drawing.Point(212, 30);
+            this.buttonPred.Name = "buttonPred";
+            this.buttonPred.Size = new System.Drawing.Size(152, 58);
+            this.buttonPred.TabIndex = 1;
+            this.buttonPred.Text = "<";
+            this.buttonPred.UseVisualStyleBackColor = true;
             // 
-            // buttonAdd
+            // buttonPredPred
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(24, 105);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(152, 36);
-            this.buttonAdd.TabIndex = 6;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonModify
-            // 
-            this.buttonModify.Location = new System.Drawing.Point(24, 147);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(152, 36);
-            this.buttonModify.TabIndex = 7;
-            this.buttonModify.Text = "Modify";
-            this.buttonModify.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(24, 189);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(152, 36);
-            this.buttonDelete.TabIndex = 8;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(24, 231);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(152, 36);
-            this.buttonExit.TabIndex = 9;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonPredPred.Location = new System.Drawing.Point(26, 30);
+            this.buttonPredPred.Name = "buttonPredPred";
+            this.buttonPredPred.Size = new System.Drawing.Size(152, 58);
+            this.buttonPredPred.TabIndex = 0;
+            this.buttonPredPred.Text = "<<";
+            this.buttonPredPred.UseVisualStyleBackColor = true;
             // 
             // StudentManagerForm
             // 
