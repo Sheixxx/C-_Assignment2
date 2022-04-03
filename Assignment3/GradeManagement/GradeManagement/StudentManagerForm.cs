@@ -46,8 +46,8 @@ namespace GradeManagement
                 return;
             }
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
-            this.bf.Name = this.textBoxName.Text;
-            this.bf.Family= this.textBoxFamily.Text;
+            this.bf.Name = this.textBoxName.Text.Trim();
+            this.bf.Family= this.textBoxFamily.Text.Trim();
             this.bf.BirthDate= this.dateTimePickerBirthDate.Value;
             if (!(this.bf.exist("StudentId", this.bf.StudentId)))
             {
@@ -97,8 +97,8 @@ namespace GradeManagement
             if (this.bf.exist("StudentId", this.bf.StudentId))
             {
                 DataTable table = this.bf.SelectStudent();
-                this.textBoxName.Text = table.Rows[0][1].ToString();
-                this.textBoxFamily.Text = table.Rows[0][2].ToString();
+                this.textBoxName.Text = table.Rows[0][1].ToString().Trim();
+                this.textBoxFamily.Text = table.Rows[0][2].ToString().Trim();
                 this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
             }
             else
@@ -140,10 +140,7 @@ namespace GradeManagement
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             if (this.bf.exist("StudentId", this.bf.StudentId))
             {
-
-                this.bf.Name = this.textBoxName.Text;
-                this.bf.Family = this.textBoxFamily.Text;
-                this.bf.BirthDate = this.dateTimePickerBirthDate.Value;
+                this.fillFields();
                 this.bf.UpdateStudent();
             }
             else
@@ -152,16 +149,18 @@ namespace GradeManagement
             }
         }
 
+        /// <summary>
+        /// Put all information of the next student in fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSuiv_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             if (this.bf.exist("StudentId", this.bf.StudentId))
             {
                 this.bf.DisplayNextStudent();
-                this.textBoxID.Text = this.bf.StudentId.ToString();
-                this.textBoxName.Text = this.bf.Name;
-                this.textBoxFamily.Text = this.bf.Family;
-                this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+                this.fillFields();
             }
             else
             {
@@ -169,38 +168,51 @@ namespace GradeManagement
             }
         }
 
+        /// <summary>
+        /// Put all information of the one before student in fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPred_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             if (this.bf.exist("StudentId", this.bf.StudentId))
             {
                 this.bf.DisplayPrevStudent();
-                this.textBoxID.Text = this.bf.StudentId.ToString();
-                this.textBoxName.Text = this.bf.Name;
-                this.textBoxFamily.Text = this.bf.Family;
-                this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+                this.fillFields();
             }
             else
             {
                 MessageBox.Show("This student id not exist");
             }
         }
-
+        /// <summary>
+        /// Put all information of the first student in fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPredPred_Click(object sender, EventArgs e)
         {
             this.bf.DisplayFirstStudent();
-            this.textBoxID.Text = this.bf.StudentId.ToString();
-            this.textBoxName.Text = this.bf.Name;
-            this.textBoxFamily.Text = this.bf.Family;
-            this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+            this.fillFields();
         }
 
+        /// <summary>
+        /// Put all information of the last student in fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSuivSuiv_Click(object sender, EventArgs e)
         {
             this.bf.DisplayLastStudent();
-            this.textBoxID.Text = this.bf.StudentId.ToString();
-            this.textBoxName.Text = this.bf.Name;
-            this.textBoxFamily.Text = this.bf.Family;
+            this.fillFields();
+        }
+
+        private void fillFields()
+        {
+            this.textBoxID.Text = this.bf.StudentId.ToString().Trim();
+            this.textBoxName.Text = this.bf.Name.Trim();
+            this.textBoxFamily.Text = this.bf.Family.Trim();
             this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
         }
     }
