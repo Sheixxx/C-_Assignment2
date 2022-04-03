@@ -128,5 +128,27 @@ namespace GradeManagement
             }
             
         }
+
+        /// <summary>
+        /// This modify a student information's
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            if (this.bf.exist("StudentId", this.bf.StudentId))
+            {
+
+                this.bf.Name = this.textBoxName.Text;
+                this.bf.Family = this.textBoxFamily.Text;
+                this.bf.BirthDate = this.dateTimePickerBirthDate.Value;
+                this.bf.UpdateStudent();
+            }
+            else
+            {
+                MessageBox.Show("This student id not exist");
+            }
+        }
     }
 }
