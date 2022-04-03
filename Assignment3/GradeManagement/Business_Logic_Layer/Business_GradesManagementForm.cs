@@ -10,6 +10,10 @@ namespace Business_Logic_Layer
 {
     public class Business_GradesManagementForm : Data_Access
     {
+        public Business_GradesManagementForm()
+        {
+
+        }
         public DataTable Select()
         {
             base.link();

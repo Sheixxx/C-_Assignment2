@@ -37,6 +37,22 @@ namespace Data_Access_Layer
             Console.WriteLine(conn.State.ToString());
         }
 
+        public void OpenIdentityInsert(string table)
+        {
+            string query = string.Format("SET IDENTITY_INSERT GradesManagement.dbo.{0} ON", table);
+            cmd.CommandText = query;
+            dt = new DataTable();
+            da.Fill(dt);
+        }
+
+        public void CloseIdentityInsert(string table)
+        {
+            string query = string.Format("SET IDENTITY_INSERT GradesManagement.dbo.{0} OFF", table);
+            cmd.CommandText = query;
+            dt = new DataTable();
+            da.Fill(dt);
+        }
+
         public DataTable SelectedData(string strsql)
         {
             cmd.CommandText = strsql;
@@ -46,28 +62,24 @@ namespace Data_Access_Layer
         }
 
         public DataTable modification(string strsql)
-        {
-            Console.WriteLine("begin modification");
-            
+        {            
             cmd.CommandText = strsql;
             dt = new DataTable();
             da.Fill(dt);
-
-            Console.WriteLine("end modification");
             return dt;
         }
 
-        public DataTable exist(string column, int value)
+        public bool exist(string column, int value)
         {
-            Console.WriteLine("begin exist");
-            
             string query = string.Format("SELECT {0} FROM Student WHERE {0}={1}", column, value);
             cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);
-
-            Console.WriteLine("end exist");
-            return dt;
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }

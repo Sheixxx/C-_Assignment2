@@ -37,9 +37,6 @@ namespace GradeManagement
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(this.textBoxID.Text);
-            Console.WriteLine(this.textBoxFamily.Text);
-            Console.WriteLine(this.textBoxName.Text);
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             this.bf.Name = this.textBoxName.Text;
             this.bf.Family= this.textBoxFamily.Text;

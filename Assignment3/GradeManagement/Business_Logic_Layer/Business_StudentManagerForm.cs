@@ -33,17 +33,19 @@ namespace Business_Logic_Layer
         public void Insertstudent()
         {
             base.link();
-            string query = null;
-            DataTable outPut = base.exist("StudentId", StudentId);
-            //query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
-
-            //if (query != null && exist != 0)
-            //{
-            //    base.modification(query);
-            //}
+            base.OpenIdentityInsert("Student");
+            if(! (base.exist("StudentId", StudentId)))
+            {
+                string query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
+                base.modification(query);
+            }
+            else
+            {
+                // afficher message dans message box l'identifiant est deja utilisé
+                Console.WriteLine("This student ID is already used!");
+            }
+            base.CloseIdentityInsert("Student");
             base.unLink();
-
-
         }
     }
 }
