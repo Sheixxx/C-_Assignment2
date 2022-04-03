@@ -37,6 +37,10 @@ namespace GradeManagement
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            if(this.textBoxID.Text ==null || this.textBoxName.Text == null || this.textBoxFamily.Text == null)
+            {
+                return;
+            }
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             this.bf.Name = this.textBoxName.Text;
             this.bf.Family= this.textBoxFamily.Text;
@@ -59,6 +63,15 @@ namespace GradeManagement
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            DataTable table = this.bf.SelectStudent();
+            this.textBoxName.Text = table.Rows[0][1].ToString();
+            this.textBoxFamily.Text = table.Rows[0][2].ToString();
+            this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
         }
     }
 }

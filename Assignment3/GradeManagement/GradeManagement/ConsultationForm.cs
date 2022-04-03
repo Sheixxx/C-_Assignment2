@@ -20,15 +20,6 @@ namespace GradeManagement
         {
             InitializeComponent();
             DataTable toto = bf.Select();
-            Console.WriteLine("/////////////////////////////////////");
-            foreach (DataRow dataRow in toto.Rows)
-            {
-                foreach (var item in dataRow.ItemArray)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-            Console.WriteLine("/////////////////////////////////////");
             dataGridView1.DataSource = toto;
         }
 

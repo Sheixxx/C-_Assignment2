@@ -30,6 +30,15 @@ namespace Business_Logic_Layer
             base.unLink();
             return outPut;
         }
+
+        public DataTable SelectStudent()
+        {
+            base.link();
+            string Query = string.Format("Select * from Student WHERE StudentId = {0}",this.StudentId);
+            DataTable outPut = base.SelectedData(Query);
+            base.unLink();
+            return outPut;
+        }
         public void Insertstudent()
         {
             base.link();
