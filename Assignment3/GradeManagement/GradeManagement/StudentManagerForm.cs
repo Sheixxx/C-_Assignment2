@@ -19,14 +19,13 @@ namespace GradeManagement
         public StudentManagerForm()
         {
             InitializeComponent();
-           
         }
 
-        private void StudentManagerForm_Load(object sender, EventArgs e)
-        {
-        
-        }
-
+        /// <summary>
+        /// Clear all the graphical fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonNew_Click(object sender, EventArgs e)
         {
             this.textBoxFamily.Clear();
@@ -35,6 +34,11 @@ namespace GradeManagement
             this.dateTimePickerBirthDate.Value = DateTime.Today;
         }
 
+        /// <summary>
+        /// This try to add a student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if(this.textBoxID.Text ==null || this.textBoxName.Text == null || this.textBoxFamily.Text == null)
@@ -60,11 +64,21 @@ namespace GradeManagement
             }
         }
 
+        /// <summary>
+        /// This close the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This Search a student and fill all fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
@@ -74,6 +88,11 @@ namespace GradeManagement
             this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
         }
 
+        /// <summary>
+        /// This delete student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
