@@ -73,5 +73,12 @@ namespace GradeManagement
             this.textBoxFamily.Text = table.Rows[0][2].ToString();
             this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            this.bf.DeleteStudent();
+            this.textBoxID.Clear();
+        }
     }
 }

@@ -56,5 +56,20 @@ namespace Business_Logic_Layer
             base.CloseIdentityInsert("Student");
             base.unLink();
         }
+
+        public void DeleteStudent()
+        {
+            base.link();
+            if (base.exist("Student", "StudentId", StudentId))
+            {
+                base.delete("Student", "StudentId",StudentId);
+            }
+            else
+            {
+                // afficher message dans message box l'identifiant est deja utilisé
+                Console.WriteLine("This student ID not exist!");
+            }
+            base.unLink();
+        }
     }
 }

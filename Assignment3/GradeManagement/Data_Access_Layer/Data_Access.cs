@@ -81,5 +81,13 @@ namespace Data_Access_Layer
             }
             else { return false; }
         }
+
+        public void delete(string table, string column, int value)
+        {
+            string query = string.Format("DELETE FROM {0} WHERE {1}={2}", table, column, value);
+            cmd.CommandText = query;
+            dt = new DataTable();
+            da.Fill(dt);
+        }
     }
 }
