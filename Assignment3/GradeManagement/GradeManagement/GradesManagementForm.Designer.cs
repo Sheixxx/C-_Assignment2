@@ -177,6 +177,7 @@
             this.buttonPreview.TabIndex = 3;
             this.buttonPreview.Text = "Preview";
             this.buttonPreview.UseVisualStyleBackColor = true;
+            this.buttonPreview.Click += new System.EventHandler(this.buttonPreview_Click);
             // 
             // buttonModifyGrade
             // 

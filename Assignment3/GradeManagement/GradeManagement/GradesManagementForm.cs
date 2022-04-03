@@ -186,7 +186,7 @@ namespace GradeManagement
                     bf.StudentId = StudentId;
 
                     bf.Grade = Int32.Parse(textBoxGrade.Text);
-                    bf.InsertGrade();
+                    bf.UpdateGrade();
                 }
                 else
                     MessageBox.Show("This student already has a grade for the course");
@@ -195,6 +195,12 @@ namespace GradeManagement
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonPreview_Click(object sender, EventArgs e)
+        {
+            DataTable toto = bf.SelectAllGrades();
+            dataGridView1.DataSource = toto;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

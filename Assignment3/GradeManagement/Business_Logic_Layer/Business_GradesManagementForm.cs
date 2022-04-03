@@ -19,11 +19,29 @@ namespace Business_Logic_Layer
         {
 
         }
+
+        /// <summary>
+        /// Get all students infos
+        /// </summary>
+        /// <returns></returns>
         public DataTable SelectAllStudent()
         {
             base.link();
             string Query = "Student";
             DataTable outPut = base.SelectedData("*",Query);
+            base.unLink();
+            return outPut;
+        }
+
+        /// <summary>
+        /// Select all grades
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectAllGrades()
+        {
+            base.link();
+            string Query = "Grade";
+            DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
         }
@@ -123,6 +141,18 @@ namespace Business_Logic_Layer
             base.link();
             string values = string.Format("({0},{1},{2})", StudentId, CoursId, Grade);
             base.insert("Grade(StudentId, CourseId, Grade)", values);
+            base.unLink();
+        }
+
+        /// <summary>
+        /// Update Grade of student
+        /// </summary>
+        public void UpdateGrade()
+        {
+            base.link();
+            string values = string.Format("Grade = {0}", this.Grade);
+            string condition = string.Format("StudentId = {0} AND CourseId = {1}", this.StudentId, this.CoursId);
+            base.update("Grade", values, condition);
             base.unLink();
         }
     }
