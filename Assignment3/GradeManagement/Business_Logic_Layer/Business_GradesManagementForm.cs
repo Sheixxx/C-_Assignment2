@@ -40,7 +40,7 @@ namespace Business_Logic_Layer
         public DataTable SelectAllGrades()
         {
             base.link();
-            string Query = "Grade";
+            string Query = string.Format("Grade WHERE StudentId = {0}", this.StudentId);
             DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
