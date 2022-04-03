@@ -41,8 +41,9 @@ namespace GradeManagement
         /// <param name="e"></param>
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if(this.textBoxID.Text ==null || this.textBoxName.Text == null || this.textBoxFamily.Text == null)
+            if(this.textBoxID.TextLength == 0 || this.textBoxName.TextLength == 0 || this.textBoxFamily.TextLength ==0)
             {
+                MessageBox.Show("At least one field is empty");
                 return;
             }
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
@@ -122,6 +123,7 @@ namespace GradeManagement
                 this.textBoxFamily.Clear();
                 this.textBoxName.Clear();
                 this.dateTimePickerBirthDate.Value = DateTime.Today;
+                MessageBox.Show("The student was deleted");
             }
             else
             {
