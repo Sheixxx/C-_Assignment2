@@ -134,7 +134,7 @@ namespace Business_Logic_Layer
         }
 
         /// <summary>
-        /// This insert one Grade.
+        /// Insert one Grade.
         /// </summary>
         public void InsertGrade()
         {

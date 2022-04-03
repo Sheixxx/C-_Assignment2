@@ -117,6 +117,11 @@ namespace GradeManagement
             }
         }
 
+        /// <summary>
+        /// The New button is used to empty all fields on the form.
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
         private void buttonNew_Click(object sender, EventArgs e)
         {
             this.textBoxNameFamily.Clear();
@@ -126,12 +131,12 @@ namespace GradeManagement
         }
 
         /// <summary>
-        /// allows you to save a student's grade in a course by checking 
+        /// This button allows you to save a student's grade in a course by checking 
         /// the constraint of filling in all fields and the uniqueness 
         /// and existence of the grade.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
         private void buttonAddGrade_Click(object sender, EventArgs e)
         {
             try
@@ -165,6 +170,12 @@ namespace GradeManagement
             
         }
 
+        /// <summary>
+        /// This button allows you to modify the grade of a student 
+        /// loaded in a selected course.
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
         private void buttonModifyGrade_Click(object sender, EventArgs e)
         {
             try
@@ -197,12 +208,22 @@ namespace GradeManagement
             }
         }
 
+        /// <summary>
+        /// The "Preview" button displays a grid containing the grades of the loaded student.
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
         private void buttonPreview_Click(object sender, EventArgs e)
         {
             DataTable toto = bf.SelectAllGrades();
             dataGridView1.DataSource = toto;
         }
 
+        /// <summary>
+        /// The Exit button closes the form.
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
