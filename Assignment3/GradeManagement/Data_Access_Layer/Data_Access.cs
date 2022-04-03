@@ -72,12 +72,14 @@ namespace Data_Access_Layer
         }
 
         /// <summary>
-        /// This select data from the database
+        /// This select data
         /// </summary>
-        /// <param name="strsql"></param>
+        /// <param name="selectColumn"></param>
+        /// <param name="query"></param>
         /// <returns>This return a DataTable with the selected informations</returns>
-        public DataTable SelectedData(string strsql)
+        public DataTable SelectedData(string selectColumn, string query)
         {
+            string strsql = string.Format("Select {0} from "+query, selectColumn);
             cmd.CommandText = strsql;
             dt = new DataTable();
             da.Fill(dt);
@@ -96,24 +98,19 @@ namespace Data_Access_Layer
         }
 
         /// <summary>
-        /// This verify if an element is in the database.
-        /// Find element if column = value
+        /// This search elements
         /// </summary>
         /// <param name="table"></param>
         /// <param name="column"></param>
         /// <param name="value"></param>
-        /// <returns>return true if the element exist</returns>
-        public bool exist(string table, string column, int value)
+        /// <returns>return DataTable with element searched</returns>
+        public DataTable find(string table, string column, int value)
         {
             string query = string.Format("SELECT {1} FROM {0} WHERE {1}={2}", table, column, value);
             cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                return true;
-            }
-            else { return false; }
+            return dt;
         }
 
         /// <summary>

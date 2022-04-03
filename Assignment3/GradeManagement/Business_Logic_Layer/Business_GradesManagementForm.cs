@@ -19,8 +19,8 @@ namespace Business_Logic_Layer
         public DataTable SelectAllStudent()
         {
             base.link();
-            string Query = "Select * from Student";
-            DataTable outPut = base.SelectedData(Query);
+            string Query = "Student";
+            DataTable outPut = base.SelectedData("*",Query);
             base.unLink();
             return outPut;
         }
@@ -32,8 +32,8 @@ namespace Business_Logic_Layer
         public DataTable SelectAllStudentId()
         {
             base.link();
-            string Query = "Select StudentId from Student";
-            DataTable outPut = base.SelectedData(Query);
+            string Query = "Student";
+            DataTable outPut = base.SelectedData("StudentId",Query);
             base.unLink();
             return outPut;
         }
@@ -45,8 +45,8 @@ namespace Business_Logic_Layer
         public DataTable SelectAllCourseName()
         {
             base.link();
-            string Query = "Select CoursName from Course";
-            DataTable outPut = base.SelectedData(Query);
+            string Query = "Course";
+            DataTable outPut = base.SelectedData("CoursName",Query);
             base.unLink();
             return outPut;
         }
@@ -58,8 +58,8 @@ namespace Business_Logic_Layer
         public DataTable SelectStudentByID()
         {
             base.link();
-            string Query = string.Format("Select * from Student WHERE StudentId = {0}", this.StudentId);
-            DataTable outPut = base.SelectedData(Query);
+            string Query = string.Format("Student WHERE StudentId = {0}", this.StudentId);
+            DataTable outPut = base.SelectedData("*",Query);
             base.unLink();
             return outPut;
         }
