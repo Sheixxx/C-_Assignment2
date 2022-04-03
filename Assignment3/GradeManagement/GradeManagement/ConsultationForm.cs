@@ -24,11 +24,6 @@ namespace GradeManagement
       
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void comboBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -65,8 +60,6 @@ namespace GradeManagement
                     double average = somme / (dataGridView1.Rows.Count - 1);
                     textBoxAverageClass.Text = average.ToString();
                 }
-                
-
             }
             catch (Exception ex)
             {
