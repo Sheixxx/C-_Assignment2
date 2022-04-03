@@ -34,6 +34,7 @@ namespace Data_Access_Layer
         public void unLink()
         {
             conn.Close();
+            Console.WriteLine(conn.State.ToString());
         }
 
         public DataTable SelectedData(string strsql)
@@ -44,18 +45,29 @@ namespace Data_Access_Layer
             return dt;
         }
 
-        public void modification(string strsql)
+        public DataTable modification(string strsql)
         {
-            try
-            {
-                cmd.CommandText = strsql;
-                cmd.ExecuteNonQuery();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            Console.WriteLine("begin modification");
             
+            cmd.CommandText = strsql;
+            dt = new DataTable();
+            da.Fill(dt);
+
+            Console.WriteLine("end modification");
+            return dt;
+        }
+
+        public DataTable exist(string column, int value)
+        {
+            Console.WriteLine("begin exist");
+            
+            string query = string.Format("SELECT {0} FROM Student WHERE {0}={1}", column, value);
+            cmd.CommandText = query;
+            dt = new DataTable();
+            da.Fill(dt);
+
+            Console.WriteLine("end exist");
+            return dt;
         }
     }
 }

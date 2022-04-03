@@ -1,6 +1,6 @@
 ﻿namespace GradeManagement
 {
-    partial class Consultation
+    partial class ConsultationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,11 +45,12 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 344);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // labelCourse
             // 
             this.labelCourse.AutoSize = true;
-            this.labelCourse.Location = new System.Drawing.Point(317, 20);
+            this.labelCourse.Location = new System.Drawing.Point(323, 20);
             this.labelCourse.Name = "labelCourse";
             this.labelCourse.Size = new System.Drawing.Size(50, 16);
             this.labelCourse.TabIndex = 1;
@@ -79,7 +80,7 @@
             this.labelAverageClass.TabIndex = 4;
             this.labelAverageClass.Text = "Average of the Class";
             // 
-            // Consultation
+            // ConsultationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +90,7 @@
             this.Controls.Add(this.comboBoxCourse);
             this.Controls.Add(this.labelCourse);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Consultation";
+            this.Name = "ConsultationForm";
             this.Text = "Consultation";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

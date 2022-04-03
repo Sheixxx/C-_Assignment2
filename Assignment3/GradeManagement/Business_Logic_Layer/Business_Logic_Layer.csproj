@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business_ConsultationForm.cs" />
+    <Compile Include="Business_GradesManagementForm.cs" />
     <Compile Include="Business_StudentManagerForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

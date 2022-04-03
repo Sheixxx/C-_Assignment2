@@ -33,5 +33,11 @@ namespace GradeManagement
             GradesManagementForm gradesManagementForm = new GradesManagementForm();
             gradesManagementForm.ShowDialog();
         }
+
+        private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultationForm consultationForm = new ConsultationForm();
+            consultationForm.ShowDialog();
+        }
     }
 }

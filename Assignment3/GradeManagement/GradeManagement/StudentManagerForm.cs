@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,12 +40,23 @@ namespace GradeManagement
             Console.WriteLine(this.textBoxID.Text);
             Console.WriteLine(this.textBoxFamily.Text);
             Console.WriteLine(this.textBoxName.Text);
-            //this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             this.bf.Name = this.textBoxName.Text;
             this.bf.Family= this.textBoxFamily.Text;
             this.bf.BirthDate= this.dateTimePickerBirthDate.Value;
 
-            bf.Insertstudent();
+            try
+            {
+                bf.Insertstudent();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
