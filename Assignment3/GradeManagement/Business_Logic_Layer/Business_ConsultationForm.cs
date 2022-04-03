@@ -17,8 +17,8 @@ namespace Business_Logic_Layer
         public DataTable Select()
         {
             base.link();
-            string Query = "Select * from Student";
-            DataTable outPut = base.SelectedData(Query);
+            string Query = "Student";
+            DataTable outPut = base.SelectedData("*",Query);
             base.unLink();
             return outPut;
         }

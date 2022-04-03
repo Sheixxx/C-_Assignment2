@@ -49,18 +49,25 @@ namespace GradeManagement
             this.bf.Name = this.textBoxName.Text;
             this.bf.Family= this.textBoxFamily.Text;
             this.bf.BirthDate= this.dateTimePickerBirthDate.Value;
+            if (!(this.bf.exist("StudentId", this.bf.StudentId)))
+            {
 
-            try
-            {
-                bf.Insertstudent();
+                try
+                {
+                    bf.Insertstudent();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("This student id is already used");
             }
         }
 
@@ -82,10 +89,21 @@ namespace GradeManagement
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
-            DataTable table = this.bf.SelectStudent();
-            this.textBoxName.Text = table.Rows[0][1].ToString();
-            this.textBoxFamily.Text = table.Rows[0][2].ToString();
-            this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
+            this.textBoxFamily.Clear();
+            this.textBoxName.Clear();
+            this.dateTimePickerBirthDate.Value = DateTime.Today;
+
+            if (this.bf.exist("StudentId", this.bf.StudentId))
+            {
+                DataTable table = this.bf.SelectStudent();
+                this.textBoxName.Text = table.Rows[0][1].ToString();
+                this.textBoxFamily.Text = table.Rows[0][2].ToString();
+                this.dateTimePickerBirthDate.Value = (System.DateTime)table.Rows[0][3];
+            }
+            else
+            {
+                MessageBox.Show("This student id not exist");
+            }
         }
 
         /// <summary>
@@ -96,8 +114,19 @@ namespace GradeManagement
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
-            this.bf.DeleteStudent();
-            this.textBoxID.Clear();
+            if(this.bf.exist("StudentId",this.bf.StudentId))
+            {
+                this.bf.DeleteStudent();
+                this.textBoxID.Clear();
+                this.textBoxFamily.Clear();
+                this.textBoxName.Clear();
+                this.dateTimePickerBirthDate.Value = DateTime.Today;
+            }
+            else
+            {
+                MessageBox.Show("This student id not exist");
+            }
+            
         }
     }
 }

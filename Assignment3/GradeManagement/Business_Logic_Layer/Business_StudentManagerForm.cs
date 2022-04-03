@@ -28,8 +28,8 @@ namespace Business_Logic_Layer
         public DataTable Select()
         {
             base.link();
-            string Query = "Select * from Student";
-            DataTable outPut = base.SelectedData(Query);
+            string Query = "Student";
+            DataTable outPut = base.SelectedData("*",Query);
             base.unLink();
             return outPut;
         }
@@ -41,8 +41,8 @@ namespace Business_Logic_Layer
         public DataTable SelectStudent()
         {
             base.link();
-            string Query = string.Format("Select * from Student WHERE StudentId = {0}",this.StudentId);
-            DataTable outPut = base.SelectedData(Query);
+            string Query = string.Format("Student WHERE StudentId = {0}",this.StudentId);
+            DataTable outPut = base.SelectedData("*",Query);
             base.unLink();
             return outPut;
         }
@@ -55,16 +55,8 @@ namespace Business_Logic_Layer
         {
             base.link();
             base.OpenIdentityInsert("Student");
-            if(! (base.exist("Student","StudentId", StudentId)))
-            {
-                string query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
-                base.insert(query);
-            }
-            else
-            {
-                // afficher message dans message box l'identifiant est deja utilisé
-                Console.WriteLine("This student ID is already used!");
-            }
+            string values = string.Format("({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
+            base.insert("Student(StudentId, Name, Family, BirthDate)", values);
             base.CloseIdentityInsert("Student");
             base.unLink();
         }
@@ -74,16 +66,30 @@ namespace Business_Logic_Layer
         public void DeleteStudent()
         {
             base.link();
-            if (base.exist("Student", "StudentId", StudentId))
-            {
-                base.delete("Student", "StudentId",StudentId);
-            }
-            else
-            {
-                // afficher message dans message box l'identifiant est deja utilisé
-                Console.WriteLine("This student ID not exist!");
-            }
+            base.delete("Student", "StudentId",StudentId);
             base.unLink();
+        }
+
+        /// <summary>
+        /// Search if an element exist or not
+        /// </summary>
+        /// <param name="column"></param>
+        /// <param name="value"></param>
+        /// <returns>Return true if element exist</returns>
+        public bool exist(string column, int value)
+        {
+            base.link();
+            DataTable dt = base.find("Student", column, value);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                base.unLink();
+                return true;
+            }
+            else {
+                base.unLink();
+                return false;
+            }
+            
         }
     }
 }
