@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Windows.Forms;
 using Data_Access_Layer;
 
 namespace Business_Logic_Layer
@@ -67,6 +68,18 @@ namespace Business_Logic_Layer
         {
             base.link();
             base.delete("Student", "StudentId",StudentId);
+            base.unLink();
+        }
+
+        /// <summary>
+        /// This update information of a specific student using his id.
+        /// </summary>
+        public void UpdateStudent()
+        {
+            base.link();
+            string values = string.Format("Name = '{0}', Family = '{1}', BirthDate = '{2}'", this.Name, this.Family, this.BirthDate);
+            string condition = string.Format("StudentId = {0}",this.StudentId);
+            base.update("Student", values, condition);
             base.unLink();
         }
 

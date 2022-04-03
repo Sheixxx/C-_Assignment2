@@ -35,7 +35,6 @@ namespace Data_Access_Layer
         {
             conn.ConnectionString = @"Data Source=ZENSHEIX\SQLEXPRESS;Initial Catalog=GradesManagement;Integrated Security=True";
             conn.Open();
-            Console.WriteLine(conn.State.ToString());
         }
 
         /// <summary>
@@ -44,7 +43,6 @@ namespace Data_Access_Layer
         public void unLink()
         {
             conn.Close();
-            Console.WriteLine(conn.State.ToString());
         }
 
         /// <summary>
@@ -89,17 +87,18 @@ namespace Data_Access_Layer
         /// <summary>
         /// This insert element in database
         /// </summary>
-        /// <param name="strsql"></param>
-        public void insert(string strsql, string value)
+        /// <param name="table"></param>
+        /// <param name="value"></param>
+        public void insert(string table, string value)
         {
-            string query = "INSERT INTO " + strsql + " VALUES " + value;
+            string query = "INSERT INTO " + table + " VALUES " + value;
             cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);
         }
 
         /// <summary>
-        /// This search elements
+        /// This search a specific elements
         /// </summary>
         /// <param name="table"></param>
         /// <param name="column"></param>
@@ -124,6 +123,20 @@ namespace Data_Access_Layer
         public void delete(string table, string column, int value)
         {
             string query = string.Format("DELETE FROM {0} WHERE {1}={2}", table, column, value);
+            cmd.CommandText = query;
+            dt = new DataTable();
+            da.Fill(dt);
+        }
+
+        /// <summary>
+        /// This alows to modify database
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="values"></param>
+        /// <param name="condition"></param>
+        public void update(string table, string values, string condition)
+        {
+            string query = string.Format("UPDATE {0} SET {1} WHERE {2}", table, values, condition);
             cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);
