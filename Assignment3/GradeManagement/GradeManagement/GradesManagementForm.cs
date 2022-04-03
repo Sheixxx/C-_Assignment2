@@ -69,7 +69,47 @@ namespace GradeManagement
         /// <param name="e"></param>
         private void comboBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // 1- We get the name of the selected Course
+                string name = " ";
+                if (comboBoxCourse.Text.Length > 0)
+                {
+                    name = comboBoxCourse.Text;
+                    MessageBox.Show("Ok");
+                }
+                bf.CoursName = name;
+                bf.CoursName = "Allemand";
+                // 2- We get the Id of the selected Course
+                DataTable table = bf.SelectCourseByName();
+                int id = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    id = Int32.Parse(row["CoursId"].ToString());
+                }
+                bf.CoursId = id;
+                
+                int StudentId = 0;
+                if (Int32.TryParse(comboBoxID.Text, out int a))
+                {
+                    StudentId = Int32.Parse(comboBoxID.Text);
+                }
+                bf.StudentId = StudentId;
+                /*
+                // 3- We get the grade of the selected Course and Selected Student
+                int grade = 0;
+                table = bf.SelectGradeById();
+                foreach (DataRow row in table.Rows)
+                {
+                    grade = Int32.Parse(row["CoursId"].ToString());
+                }
 
+                textBoxGrade.Text = grade.ToString();*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonNew_Click(object sender, EventArgs e)

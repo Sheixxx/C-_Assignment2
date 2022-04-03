@@ -11,6 +11,8 @@ namespace Business_Logic_Layer
     public class Business_GradesManagementForm : Data_Access
     {
         public int StudentId { get; set; }
+        public int CoursId { get; set; }
+        public string CoursName { get; set; }
 
         public Business_GradesManagementForm()
         {
@@ -59,6 +61,31 @@ namespace Business_Logic_Layer
         {
             base.link();
             string Query = string.Format("Select * from Student WHERE StudentId = {0}", this.StudentId);
+            DataTable outPut = base.SelectedData(Query);
+            base.unLink();
+            return outPut;
+        }
+
+        /// <summary>
+        /// Select Couse by name
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectCourseByName()
+        {
+            base.link();
+            string Query = string.Format("Select * from Course WHERE CoursName = '{0}'", this.CoursName);
+            DataTable outPut = base.SelectedData(Query);
+            base.unLink();
+            return outPut;
+        }
+        /// <summary>
+        /// Select Grade by id
+        /// </summary>
+        /// <returns></returns>
+        public DataTable SelectGradeById()
+        {
+            base.link();
+            string Query = string.Format("Select Grade from Grade WHERE StudentId = {0} AND CoursId = {1}", this.StudentId, this.CoursId);
             DataTable outPut = base.SelectedData(Query);
             base.unLink();
             return outPut;
