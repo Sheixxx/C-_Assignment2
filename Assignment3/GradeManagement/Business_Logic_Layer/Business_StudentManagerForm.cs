@@ -55,8 +55,8 @@ namespace Business_Logic_Layer
         {
             base.link();
             base.OpenIdentityInsert("Student");
-            string query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
-            base.insert(query);
+            string values = string.Format("({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
+            base.insert("Student(StudentId, Name, Family, BirthDate)", values);
             base.CloseIdentityInsert("Student");
             base.unLink();
         }

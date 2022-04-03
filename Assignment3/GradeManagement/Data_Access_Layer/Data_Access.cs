@@ -90,9 +90,10 @@ namespace Data_Access_Layer
         /// This insert element in database
         /// </summary>
         /// <param name="strsql"></param>
-        public void insert(string strsql)
-        {            
-            cmd.CommandText = strsql;
+        public void insert(string strsql, string value)
+        {
+            string query = "INSERT INTO " + strsql + " VALUES " + value;
+            cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);
         }
