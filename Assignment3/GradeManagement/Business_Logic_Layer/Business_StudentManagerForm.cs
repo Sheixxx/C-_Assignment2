@@ -4,6 +4,10 @@ using Data_Access_Layer;
 
 namespace Business_Logic_Layer
 {
+    /// <summary>
+    /// Constructor with all the properties for 4 attributs:
+    /// StudentId, Name, Family and BirthDate
+    /// </summary>
     public class Business_StudentManagerForm:Data_Access
     {
         public int StudentId { get; set; }
@@ -17,6 +21,10 @@ namespace Business_Logic_Layer
             Family = "";
             BirthDate = DateTime.Now;
         }
+        /// <summary>
+        /// This Select all the students
+        /// </summary>
+        /// <returns>Return a DataTable with all elements in Student Table</returns>
         public DataTable Select()
         {
             base.link();
@@ -26,6 +34,10 @@ namespace Business_Logic_Layer
             return outPut;
         }
 
+        /// <summary>
+        /// This select one precise student.
+        /// </summary>
+        /// <returns>Return a DataTable with the maximum of one element</returns>
         public DataTable SelectStudent()
         {
             base.link();
@@ -34,6 +46,11 @@ namespace Business_Logic_Layer
             base.unLink();
             return outPut;
         }
+
+        /// <summary>
+        /// This insert one student.
+        /// </summary>
+        /// <exception cref="SqlException">Exception if the studentId is already used.</exception>
         public void Insertstudent()
         {
             base.link();
@@ -41,7 +58,7 @@ namespace Business_Logic_Layer
             if(! (base.exist("Student","StudentId", StudentId)))
             {
                 string query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
-                base.modification(query);
+                base.insert(query);
             }
             else
             {
@@ -49,6 +66,23 @@ namespace Business_Logic_Layer
                 Console.WriteLine("This student ID is already used!");
             }
             base.CloseIdentityInsert("Student");
+            base.unLink();
+        }
+        /// <summary>
+        /// This delete a student
+        /// </summary>
+        public void DeleteStudent()
+        {
+            base.link();
+            if (base.exist("Student", "StudentId", StudentId))
+            {
+                base.delete("Student", "StudentId",StudentId);
+            }
+            else
+            {
+                // afficher message dans message box l'identifiant est deja utilisé
+                Console.WriteLine("This student ID not exist!");
+            }
             base.unLink();
         }
     }
