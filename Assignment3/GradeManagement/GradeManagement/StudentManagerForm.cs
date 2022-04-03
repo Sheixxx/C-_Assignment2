@@ -55,6 +55,7 @@ namespace GradeManagement
                 try
                 {
                     bf.Insertstudent();
+                    MessageBox.Show("The student was inserted");
                 }
                 catch (SqlException ex)
                 {
@@ -149,6 +150,58 @@ namespace GradeManagement
             {
                 MessageBox.Show("This student id not exist");
             }
+        }
+
+        private void buttonSuiv_Click(object sender, EventArgs e)
+        {
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            if (this.bf.exist("StudentId", this.bf.StudentId))
+            {
+                this.bf.DisplayNextStudent();
+                this.textBoxID.Text = this.bf.StudentId.ToString();
+                this.textBoxName.Text = this.bf.Name;
+                this.textBoxFamily.Text = this.bf.Family;
+                this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+            }
+            else
+            {
+                MessageBox.Show("This student id not exist");
+            }
+        }
+
+        private void buttonPred_Click(object sender, EventArgs e)
+        {
+            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            if (this.bf.exist("StudentId", this.bf.StudentId))
+            {
+                this.bf.DisplayPrevStudent();
+                this.textBoxID.Text = this.bf.StudentId.ToString();
+                this.textBoxName.Text = this.bf.Name;
+                this.textBoxFamily.Text = this.bf.Family;
+                this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+            }
+            else
+            {
+                MessageBox.Show("This student id not exist");
+            }
+        }
+
+        private void buttonPredPred_Click(object sender, EventArgs e)
+        {
+            this.bf.DisplayFirstStudent();
+            this.textBoxID.Text = this.bf.StudentId.ToString();
+            this.textBoxName.Text = this.bf.Name;
+            this.textBoxFamily.Text = this.bf.Family;
+            this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
+        }
+
+        private void buttonSuivSuiv_Click(object sender, EventArgs e)
+        {
+            this.bf.DisplayLastStudent();
+            this.textBoxID.Text = this.bf.StudentId.ToString();
+            this.textBoxName.Text = this.bf.Name;
+            this.textBoxFamily.Text = this.bf.Family;
+            this.dateTimePickerBirthDate.Value = this.bf.BirthDate;
         }
     }
 }

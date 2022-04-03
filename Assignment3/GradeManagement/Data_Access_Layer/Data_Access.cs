@@ -35,6 +35,7 @@ namespace Data_Access_Layer
         {
             conn.ConnectionString = @"Data Source=ZENSHEIX\SQLEXPRESS;Initial Catalog=GradesManagement;Integrated Security=True";
             conn.Open();
+            Console.WriteLine(conn.State);
         }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace Data_Access_Layer
         public void unLink()
         {
             conn.Close();
+            Console.WriteLine(conn.State);
         }
 
         /// <summary>

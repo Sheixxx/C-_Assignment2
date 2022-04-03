@@ -229,6 +229,7 @@
             this.buttonSuivSuiv.TabIndex = 3;
             this.buttonSuivSuiv.Text = ">>";
             this.buttonSuivSuiv.UseVisualStyleBackColor = true;
+            this.buttonSuivSuiv.Click += new System.EventHandler(this.buttonSuivSuiv_Click);
             // 
             // buttonSuiv
             // 
@@ -238,6 +239,7 @@
             this.buttonSuiv.TabIndex = 2;
             this.buttonSuiv.Text = ">";
             this.buttonSuiv.UseVisualStyleBackColor = true;
+            this.buttonSuiv.Click += new System.EventHandler(this.buttonSuiv_Click);
             // 
             // buttonPred
             // 
@@ -247,6 +249,7 @@
             this.buttonPred.TabIndex = 1;
             this.buttonPred.Text = "<";
             this.buttonPred.UseVisualStyleBackColor = true;
+            this.buttonPred.Click += new System.EventHandler(this.buttonPred_Click);
             // 
             // buttonPredPred
             // 
@@ -256,6 +259,7 @@
             this.buttonPredPred.TabIndex = 0;
             this.buttonPredPred.Text = "<<";
             this.buttonPredPred.UseVisualStyleBackColor = true;
+            this.buttonPredPred.Click += new System.EventHandler(this.buttonPredPred_Click);
             // 
             // StudentManagerForm
             // 
