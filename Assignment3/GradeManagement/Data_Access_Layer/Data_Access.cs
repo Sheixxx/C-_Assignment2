@@ -69,9 +69,9 @@ namespace Data_Access_Layer
             return dt;
         }
 
-        public bool exist(string column, int value)
+        public bool exist(string table, string column, int value)
         {
-            string query = string.Format("SELECT {0} FROM Student WHERE {0}={1}", column, value);
+            string query = string.Format("SELECT {1} FROM {0} WHERE {1}={2}", table, column, value);
             cmd.CommandText = query;
             dt = new DataTable();
             da.Fill(dt);

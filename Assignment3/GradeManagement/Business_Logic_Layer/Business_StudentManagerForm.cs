@@ -43,7 +43,7 @@ namespace Business_Logic_Layer
         {
             base.link();
             base.OpenIdentityInsert("Student");
-            if(! (base.exist("StudentId", StudentId)))
+            if(! (base.exist("Student","StudentId", StudentId)))
             {
                 string query = string.Format("INSERT INTO Student(StudentId, Name, Family, BirthDate)  VALUES({0},\'{1}\',\'{2}\',\'{3}\')", StudentId, Name, Family, BirthDate);
                 base.modification(query);
