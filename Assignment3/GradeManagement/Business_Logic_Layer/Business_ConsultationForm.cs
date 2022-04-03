@@ -12,13 +12,10 @@ namespace Business_Logic_Layer
     {
         public int StudentId { get; set; }
         public string StudentLastName { get; set; }
-
         public string StudentFirstName { get; set; }
-
         public int CoursId { get; set; }
         public int Grade { get; set; }
         public string CoursName { get; set; }
-
 
         public Business_ConsultationForm()
         {

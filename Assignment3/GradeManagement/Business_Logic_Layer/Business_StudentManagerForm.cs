@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Data_Access_Layer;
+using System;
 using System.Data;
-using Data_Access_Layer;
 
 namespace Business_Logic_Layer
 {
@@ -8,7 +8,7 @@ namespace Business_Logic_Layer
     /// Constructor with all the properties for 4 attributs:
     /// StudentId, Name, Family and BirthDate
     /// </summary>
-    public class Business_StudentManagerForm:Data_Access
+    public class Business_StudentManagerForm : Data_Access
     {
         public int StudentId { get; set; }
         public string Name { get; set; }
@@ -29,7 +29,7 @@ namespace Business_Logic_Layer
         {
             base.link();
             string Query = "Student";
-            DataTable outPut = base.SelectedData("*",Query);
+            DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
         }
@@ -41,8 +41,8 @@ namespace Business_Logic_Layer
         public DataTable SelectStudent()
         {
             base.link();
-            string Query = string.Format("Student WHERE StudentId = {0}",this.StudentId);
-            DataTable outPut = base.SelectedData("*",Query);
+            string Query = string.Format("Student WHERE StudentId = {0}", this.StudentId);
+            DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
         }
@@ -66,7 +66,7 @@ namespace Business_Logic_Layer
         public void DeleteStudent()
         {
             base.link();
-            base.delete("Student", "StudentId",StudentId);
+            base.delete("Student", "StudentId", StudentId);
             base.unLink();
         }
 
@@ -97,7 +97,8 @@ namespace Business_Logic_Layer
                 base.unLink();
                 return true;
             }
-            else {
+            else
+            {
                 base.unLink();
                 return false;
             }
@@ -109,7 +110,7 @@ namespace Business_Logic_Layer
         public void DisplayNextStudent()
         {
             base.link();
-            DataTable table = base.SelectedData("*", String.Format("Student where StudentId > {0}",this.StudentId));
+            DataTable table = base.SelectedData("*", String.Format("Student where StudentId > {0}", this.StudentId));
             try
             {
                 this.FillInformations(table);

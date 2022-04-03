@@ -59,11 +59,9 @@
             this.groupBox1.Controls.Add(this.labelCourse);
             this.groupBox1.Controls.Add(this.labelNameFamily);
             this.groupBox1.Controls.Add(this.labelID);
-            this.groupBox1.Location = new System.Drawing.Point(14, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(505, 335);
+            this.groupBox1.Size = new System.Drawing.Size(449, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -72,10 +70,9 @@
             // 
             this.comboBoxID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxID.FormattingEnabled = true;
-            this.comboBoxID.Location = new System.Drawing.Point(256, 56);
-            this.comboBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxID.Location = new System.Drawing.Point(228, 45);
             this.comboBoxID.Name = "comboBoxID";
-            this.comboBoxID.Size = new System.Drawing.Size(136, 28);
+            this.comboBoxID.Size = new System.Drawing.Size(121, 24);
             this.comboBoxID.TabIndex = 5;
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
@@ -83,62 +80,59 @@
             // 
             this.comboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCourse.FormattingEnabled = true;
-            this.comboBoxCourse.Location = new System.Drawing.Point(256, 180);
-            this.comboBoxCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxCourse.Location = new System.Drawing.Point(228, 144);
             this.comboBoxCourse.Name = "comboBoxCourse";
-            this.comboBoxCourse.Size = new System.Drawing.Size(220, 28);
+            this.comboBoxCourse.Size = new System.Drawing.Size(196, 24);
             this.comboBoxCourse.TabIndex = 9;
             this.comboBoxCourse.SelectedIndexChanged += new System.EventHandler(this.comboBoxCourse_SelectedIndexChanged);
             // 
             // textBoxGrade
             // 
-            this.textBoxGrade.Location = new System.Drawing.Point(256, 245);
-            this.textBoxGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxGrade.Location = new System.Drawing.Point(228, 196);
             this.textBoxGrade.Name = "textBoxGrade";
-            this.textBoxGrade.Size = new System.Drawing.Size(220, 26);
+            this.textBoxGrade.Size = new System.Drawing.Size(196, 22);
             this.textBoxGrade.TabIndex = 5;
             // 
             // textBoxNameFamily
             // 
-            this.textBoxNameFamily.Location = new System.Drawing.Point(256, 120);
-            this.textBoxNameFamily.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNameFamily.Location = new System.Drawing.Point(228, 96);
             this.textBoxNameFamily.Name = "textBoxNameFamily";
-            this.textBoxNameFamily.Size = new System.Drawing.Size(220, 26);
+            this.textBoxNameFamily.Size = new System.Drawing.Size(196, 22);
             this.textBoxNameFamily.TabIndex = 4;
             // 
             // labelGrade
             // 
             this.labelGrade.AutoSize = true;
-            this.labelGrade.Location = new System.Drawing.Point(66, 252);
+            this.labelGrade.Location = new System.Drawing.Point(59, 202);
             this.labelGrade.Name = "labelGrade";
-            this.labelGrade.Size = new System.Drawing.Size(54, 20);
+            this.labelGrade.Size = new System.Drawing.Size(45, 16);
             this.labelGrade.TabIndex = 3;
             this.labelGrade.Text = "Grade";
             // 
             // labelCourse
             // 
             this.labelCourse.AutoSize = true;
-            this.labelCourse.Location = new System.Drawing.Point(66, 190);
+            this.labelCourse.Location = new System.Drawing.Point(59, 152);
             this.labelCourse.Name = "labelCourse";
-            this.labelCourse.Size = new System.Drawing.Size(60, 20);
+            this.labelCourse.Size = new System.Drawing.Size(50, 16);
             this.labelCourse.TabIndex = 2;
             this.labelCourse.Text = "Course";
             // 
             // labelNameFamily
             // 
             this.labelNameFamily.AutoSize = true;
-            this.labelNameFamily.Location = new System.Drawing.Point(66, 128);
+            this.labelNameFamily.Location = new System.Drawing.Point(59, 102);
             this.labelNameFamily.Name = "labelNameFamily";
-            this.labelNameFamily.Size = new System.Drawing.Size(131, 20);
+            this.labelNameFamily.Size = new System.Drawing.Size(113, 16);
             this.labelNameFamily.TabIndex = 1;
             this.labelNameFamily.Text = "Name and Family";
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(66, 66);
+            this.labelID.Location = new System.Drawing.Point(59, 53);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(26, 20);
+            this.labelID.Size = new System.Drawing.Size(20, 16);
             this.labelID.TabIndex = 0;
             this.labelID.Text = "ID";
             // 
@@ -149,20 +143,17 @@
             this.groupBox2.Controls.Add(this.buttonModifyGrade);
             this.groupBox2.Controls.Add(this.buttonAddGrade);
             this.groupBox2.Controls.Add(this.buttonNew);
-            this.groupBox2.Location = new System.Drawing.Point(603, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(536, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(284, 311);
+            this.groupBox2.Size = new System.Drawing.Size(252, 249);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(142, 245);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Location = new System.Drawing.Point(126, 196);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(128, 48);
+            this.buttonExit.Size = new System.Drawing.Size(114, 38);
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -170,10 +161,9 @@
             // 
             // buttonPreview
             // 
-            this.buttonPreview.Location = new System.Drawing.Point(142, 190);
-            this.buttonPreview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonPreview.Location = new System.Drawing.Point(126, 152);
             this.buttonPreview.Name = "buttonPreview";
-            this.buttonPreview.Size = new System.Drawing.Size(128, 48);
+            this.buttonPreview.Size = new System.Drawing.Size(114, 38);
             this.buttonPreview.TabIndex = 3;
             this.buttonPreview.Text = "Preview";
             this.buttonPreview.UseVisualStyleBackColor = true;
@@ -181,10 +171,9 @@
             // 
             // buttonModifyGrade
             // 
-            this.buttonModifyGrade.Location = new System.Drawing.Point(142, 135);
-            this.buttonModifyGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonModifyGrade.Location = new System.Drawing.Point(126, 108);
             this.buttonModifyGrade.Name = "buttonModifyGrade";
-            this.buttonModifyGrade.Size = new System.Drawing.Size(128, 48);
+            this.buttonModifyGrade.Size = new System.Drawing.Size(114, 38);
             this.buttonModifyGrade.TabIndex = 2;
             this.buttonModifyGrade.Text = "Modify Grade";
             this.buttonModifyGrade.UseVisualStyleBackColor = true;
@@ -192,10 +181,9 @@
             // 
             // buttonAddGrade
             // 
-            this.buttonAddGrade.Location = new System.Drawing.Point(142, 80);
-            this.buttonAddGrade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddGrade.Location = new System.Drawing.Point(126, 64);
             this.buttonAddGrade.Name = "buttonAddGrade";
-            this.buttonAddGrade.Size = new System.Drawing.Size(128, 48);
+            this.buttonAddGrade.Size = new System.Drawing.Size(114, 38);
             this.buttonAddGrade.TabIndex = 1;
             this.buttonAddGrade.Text = "Add Grade";
             this.buttonAddGrade.UseVisualStyleBackColor = true;
@@ -203,10 +191,9 @@
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(142, 25);
-            this.buttonNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonNew.Location = new System.Drawing.Point(126, 20);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(128, 48);
+            this.buttonNew.Size = new System.Drawing.Size(114, 38);
             this.buttonNew.TabIndex = 0;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -215,23 +202,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 358);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 286);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 152);
             this.dataGridView1.TabIndex = 8;
             // 
             // GradesManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GradesManagementForm";
             this.Text = "GradesManagementForm";
             this.groupBox1.ResumeLayout(false);

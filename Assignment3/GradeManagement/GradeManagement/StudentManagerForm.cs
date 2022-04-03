@@ -46,7 +46,14 @@ namespace GradeManagement
                 MessageBox.Show("At least one field is empty");
                 return;
             }
-            this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            try
+            {
+                this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
+            }
+            catch
+            {
+                MessageBox.Show("The Id is non numerical");
+            }
             this.bf.Name = this.textBoxName.Text.Trim();
             this.bf.Family= this.textBoxFamily.Text.Trim();
             this.bf.BirthDate= this.dateTimePickerBirthDate.Value;
@@ -142,7 +149,9 @@ namespace GradeManagement
             this.bf.StudentId = Convert.ToInt32(this.textBoxID.Text);
             if (this.bf.exist("StudentId", this.bf.StudentId))
             {
-                this.fillFields();
+                this.bf.Name = this.textBoxName.Text;
+                this.bf.Family = this.textBoxFamily.Text;
+                this.bf.BirthDate = this.dateTimePickerBirthDate.Value;
                 this.bf.UpdateStudent();
             }
             else
@@ -210,6 +219,9 @@ namespace GradeManagement
             this.fillFields();
         }
 
+        /// <summary>
+        /// This allows to set informations in textField.
+        /// </summary>
         private void fillFields()
         {
             this.textBoxID.Text = this.bf.StudentId.ToString().Trim();
