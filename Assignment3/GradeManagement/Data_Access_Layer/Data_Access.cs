@@ -33,7 +33,7 @@ namespace Data_Access_Layer
         /// </summary>
         public void link()
         {
-            conn.ConnectionString = @"Data Source=ZENSHEIX\SQLEXPRESS;Initial Catalog=GradesManagement;Integrated Security=True";
+            conn.ConnectionString = @"Data Source=QUENTIN\SQLEXPRESS;Initial Catalog=GradesManagement;Integrated Security=True";
             conn.Open();
         }
 

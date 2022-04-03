@@ -63,6 +63,7 @@
             this.comboBoxCourse.Name = "comboBoxCourse";
             this.comboBoxCourse.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCourse.TabIndex = 2;
+            this.comboBoxCourse.SelectedIndexChanged += new System.EventHandler(this.comboBoxCourse_SelectedIndexChanged);
             // 
             // textBoxAverageClass
             // 
