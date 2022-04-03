@@ -12,6 +12,7 @@ namespace Business_Logic_Layer
     {
         public int StudentId { get; set; }
         public int CoursId { get; set; }
+        public int Grade { get; set; }
         public string CoursName { get; set; }
 
         public Business_GradesManagementForm()
@@ -73,8 +74,8 @@ namespace Business_Logic_Layer
         public DataTable SelectCourseByName()
         {
             base.link();
-            string Query = string.Format("Select * from Course WHERE CoursName = '{0}'", this.CoursName);
-            DataTable outPut = base.SelectedData(Query);
+            string Query = string.Format("Course WHERE CoursName = '{0}'", this.CoursName);
+            DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
         }
@@ -85,10 +86,44 @@ namespace Business_Logic_Layer
         public DataTable SelectGradeById()
         {
             base.link();
-            string Query = string.Format("Select Grade from Grade WHERE StudentId = {0} AND CoursId = {1}", this.StudentId, this.CoursId);
-            DataTable outPut = base.SelectedData(Query);
+            string Query = string.Format("Grade WHERE StudentId = {0} AND CourseId = {1}", this.StudentId, this.CoursId);
+            DataTable outPut = base.SelectedData("*", Query);
             base.unLink();
             return outPut;
+        }
+
+        /// <summary>
+        /// Check if a student has a grade for this course
+        /// </summary>
+        /// <param name="column"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool gradeExist()
+        {
+            base.link();
+            string Query = string.Format("Grade WHERE StudentId = {0} AND CourseId = {1}", this.StudentId, this.CoursId);
+            DataTable outPut = base.SelectedData("*", Query);
+            if (outPut != null && outPut.Rows.Count > 0)
+            {
+                base.unLink();
+                return true;
+            }
+            else
+            {
+                base.unLink();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// This insert one Grade.
+        /// </summary>
+        public void InsertGrade()
+        {
+            base.link();
+            string values = string.Format("({0},{1},{2})", StudentId, CoursId, Grade);
+            base.insert("Grade(StudentId, CourseId, Grade)", values);
+            base.unLink();
         }
     }
 }

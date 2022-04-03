@@ -187,6 +187,7 @@
             this.buttonModifyGrade.TabIndex = 2;
             this.buttonModifyGrade.Text = "Modify Grade";
             this.buttonModifyGrade.UseVisualStyleBackColor = true;
+            this.buttonModifyGrade.Click += new System.EventHandler(this.buttonModifyGrade_Click);
             // 
             // buttonAddGrade
             // 
@@ -197,6 +198,7 @@
             this.buttonAddGrade.TabIndex = 1;
             this.buttonAddGrade.Text = "Add Grade";
             this.buttonAddGrade.UseVisualStyleBackColor = true;
+            this.buttonAddGrade.Click += new System.EventHandler(this.buttonAddGrade_Click);
             // 
             // buttonNew
             // 

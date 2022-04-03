@@ -74,12 +74,8 @@ namespace GradeManagement
                 // 1- We get the name of the selected Course
                 string name = " ";
                 if (comboBoxCourse.Text.Length > 0)
-                {
                     name = comboBoxCourse.Text;
-                    MessageBox.Show("Ok");
-                }
                 bf.CoursName = name;
-                bf.CoursName = "Allemand";
                 // 2- We get the Id of the selected Course
                 DataTable table = bf.SelectCourseByName();
                 int id = 0;
@@ -95,16 +91,25 @@ namespace GradeManagement
                     StudentId = Int32.Parse(comboBoxID.Text);
                 }
                 bf.StudentId = StudentId;
-                /*
+                
                 // 3- We get the grade of the selected Course and Selected Student
                 int grade = 0;
                 table = bf.SelectGradeById();
                 foreach (DataRow row in table.Rows)
                 {
-                    grade = Int32.Parse(row["CoursId"].ToString());
+                    grade = Int32.Parse(row["Grade"].ToString());
                 }
 
-                textBoxGrade.Text = grade.ToString();*/
+
+                if(bf.gradeExist())
+                {
+                    textBoxGrade.Text = grade.ToString();
+                }
+                else
+                {
+                    textBoxGrade.Text = "No Grade";
+                }
+                
             }
             catch (Exception ex)
             {
@@ -120,11 +125,81 @@ namespace GradeManagement
             this.comboBoxCourse.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// allows you to save a student's grade in a course by checking 
+        /// the constraint of filling in all fields and the uniqueness 
+        /// and existence of the grade.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAddGrade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!bf.gradeExist() || textBoxGrade.Text == "No Grade")
+                {
+                    string name = " ";
+                    if (comboBoxCourse.Text.Length > 0)
+                        name = comboBoxCourse.Text;
+                    bf.CoursName = name;
+                    DataTable table = bf.SelectCourseByName();
+                    int id = 0;
+                    foreach (DataRow row in table.Rows)
+                        id = Int32.Parse(row["CoursId"].ToString());
+                    bf.CoursId = id;
+                    int StudentId = 0;
+                    if (Int32.TryParse(comboBoxID.Text, out int a))
+                        StudentId = Int32.Parse(comboBoxID.Text);
+                    bf.StudentId = StudentId;
+
+                    bf.Grade = Int32.Parse(textBoxGrade.Text);
+                    bf.InsertGrade();
+                }
+                else
+                    MessageBox.Show("This student already has a grade for the course");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void buttonModifyGrade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bf.gradeExist() && textBoxGrade.Text != "No Grade")
+                {
+                    string name = " ";
+                    if (comboBoxCourse.Text.Length > 0)
+                        name = comboBoxCourse.Text;
+                    bf.CoursName = name;
+                    DataTable table = bf.SelectCourseByName();
+                    int id = 0;
+                    foreach (DataRow row in table.Rows)
+                        id = Int32.Parse(row["CoursId"].ToString());
+                    bf.CoursId = id;
+                    int StudentId = 0;
+                    if (Int32.TryParse(comboBoxID.Text, out int a))
+                        StudentId = Int32.Parse(comboBoxID.Text);
+                    bf.StudentId = StudentId;
+
+                    bf.Grade = Int32.Parse(textBoxGrade.Text);
+                    bf.InsertGrade();
+                }
+                else
+                    MessageBox.Show("This student already has a grade for the course");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
     }
 }
